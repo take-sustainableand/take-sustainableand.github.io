@@ -1,0 +1,75 @@
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1B4D3E;
+}
+
+/* Smooth Scrolling & Base Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0a0a0a;
+    color: #ffffff;
+}
+
+/* Typography Utilities */
+.text-huge {
+    font-size: clamp(3rem, 8vw, 10rem);
+    line-height: 0.9;
+}
+
+/* Image Hover & Reveal Effects */
+.img-zoom-container {
+    overflow: hidden;
+}
+
+.img-zoom {
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.group:hover .img-zoom {
+    transform: scale(1.05);
+}
+
+/* Text Reveal Animation */
+.reveal-text {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-text.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-img {
+    clip-path: inset(100% 0 0 0);
+    transition: clip-path 1.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.reveal-img.active {
+    clip-path: inset(0 0 0 0);
+}
+
+/* Staggered delays */
+.delay-100 {
+    transition-delay: 100ms;
+}
+
+.delay-200 {
+    transition-delay: 200ms;
+}
+
+.delay-300 {
+    transition-delay: 300ms;
+}
