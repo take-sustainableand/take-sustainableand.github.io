@@ -1,0 +1,26 @@
+# Phase 1〜3 LP改善完了
+
+- **日付**: 2026-04-04
+- **作業内容**: sustainable&のLP（sustainableand.com）に対し、SEO・コンテンツ・技術改善を3フェーズで実施
+- **判断・決定事項**:
+  - stagingブランチで作業し、確認後mainにマージする運用方針
+  - 記事テーマは中堅中小向けの入り口寄り（LCA基礎、CFP算定ガイド、外注/社内判断）に変更
+  - SERVICE_001_LCA_REPORTv2/knowledge/ のナレッジを記事の専門内容に活用
+  - FAQ 6問の内容・料金感（スクリーニング数十万〜、詳細百万〜）はユーザー承認済み
+- **変更ファイル**:
+  - index.html（SEOメタ、JSON-LD、モバイルメニュー、FAQ、ナビ、画像ローカル化、フッター）
+  - js/script.js（モバイルメニューJS）
+  - css/style.css（.prose-content, .faq-item追加）
+  - robots.txt, sitemap.xml（新規作成・更新）
+  - columns/index.html, columns/lca-basics-for-beginners.html, columns/cfp-calculation-guide.html, columns/lca-outsource-or-inhouse.html（新規）
+  - privacy-policy.html（新規）
+  - images/（10枚ローカル化）
+- **未解決・申し送り**:
+  - staging → main マージは未実施（表現見直し後に実施予定）
+  - OGP画像はUnsplash画像の切り出し。ブランド専用OGP画像の作成は今後検討
+  - apple-touch-icon のSVG data URIはiOS Safariで非対応の可能性あり。PNG版の作成を検討
+  - Tailwind CSS CDN → ビルド版への移行は未実施（Phase 3外）
+  - Google Search Consoleへのsitemap提出が必要
+- **エラー・注意点**:
+  - curlのSSL接続エラー（exit code 35）→ PowerShellのInvoke-WebRequestで回避
+  - file://プロトコルでの表示テストのため、一部リンク（絶対パス /columns/ 等）はローカルテストでは動作しない。本番デプロイ後に再確認推奨
