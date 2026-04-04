@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CFP（カーボンフットプリント）算定の始め方｜準備・手順・よくある疑問 | sustainable&</title>
+    <meta name="description" content="CFP（カーボンフットプリント）算定を始める企業担当者向けガイド。必要な準備、算定手順、IDEAなどのデータベース、よくある疑問をわかりやすく解説します。">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://sustainableand.com/columns/cfp-calculation-guide.html">
+
+    <!-- OGP Tags -->
+    <meta property="og:site_name" content="sustainable&">
+    <meta property="og:title" content="CFP（カーボンフットプリント）算定の始め方｜準備・手順・よくある疑問">
+    <meta property="og:description" content="CFP算定を始める企業担当者向けガイド。必要な準備、算定手順、データベース、よくある疑問をわかりやすく解説。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://sustainableand.com/columns/cfp-calculation-guide.html">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&h=630&auto=format&fit=crop">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="article:published_time" content="2026-04-04T00:00:00+09:00">
+    <meta property="article:author" content="藤森 健">
+    <meta property="article:section" content="CFP">
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CFP（カーボンフットプリント）算定の始め方｜準備・手順・よくある疑問">
+    <meta name="twitter:description" content="CFP算定を始める企業担当者向けガイド。必要な準備、算定手順、データベース、よくある疑問をわかりやすく解説。">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&h=630&auto=format&fit=crop">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><rect width=%27100%27 height=%27100%27 rx=%2712%27 fill=%27%231B4D3E%27/><text x=%2750%27 y=%2772%27 font-family=%27sans-serif%27 font-size=%2764%27 font-weight=%27bold%27 fill=%27white%27 text-anchor=%27middle%27>%26</text></svg>">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../js/tailwind.config.js"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@1.7.0"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "headline": "CFP（カーボンフットプリント）算定の始め方｜準備・手順・よくある疑問",
+          "description": "CFP（カーボンフットプリント）算定を始める企業担当者向けガイド。必要な準備、算定手順、IDEAなどのデータベース、よくある疑問をわかりやすく解説します。",
+          "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&h=630&auto=format&fit=crop",
+          "datePublished": "2026-04-04",
+          "dateModified": "2026-04-04",
+          "author": {
+            "@type": "Person",
+            "name": "藤森 健",
+            "jobTitle": "LCAエキスパート・中小企業診断士"
+          },
+          "publisher": { "@id": "https://sustainableand.com/#organization" },
+          "mainEntityOfPage": "https://sustainableand.com/columns/cfp-calculation-guide.html",
+          "inLanguage": "ja"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sustainableand.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Column", "item": "https://sustainableand.com/columns/" },
+            { "@type": "ListItem", "position": 3, "name": "CFP算定の始め方" }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body class="bg-brand-black text-white font-sans antialiased selection:bg-brand-green selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 flex justify-between items-center px-4 md:px-12 py-6 mix-blend-difference text-white">
+        <a href="/" class="font-en font-bold text-2xl tracking-tighter z-50">sustainable&</a>
+        <div class="hidden md:flex gap-12 font-en text-xs font-bold tracking-widest uppercase z-50">
+            <a href="/#about" class="hover:text-brand-green transition-colors duration-300">About</a>
+            <a href="/#expertise" class="hover:text-brand-green transition-colors duration-300">Expertise</a>
+            <a href="/#works" class="hover:text-brand-green transition-colors duration-300">Works</a>
+            <a href="/columns/" class="text-brand-green transition-colors duration-300">Column</a>
+            <a href="/#contact" class="hover:text-brand-green transition-colors duration-300">Contact</a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden text-white z-50" aria-label="メニューを開く" aria-expanded="false">
+            <i data-lucide="menu" class="w-8 h-8"></i>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 z-40 bg-brand-black/95 backdrop-blur-sm flex flex-col items-center justify-center translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] md:hidden"
+        aria-hidden="true">
+        <div class="flex flex-col items-center gap-10 font-en text-2xl font-bold tracking-widest uppercase">
+            <a href="/#about" class="mobile-menu-link text-white hover:text-brand-green transition-colors duration-300">About</a>
+            <a href="/#expertise" class="mobile-menu-link text-white hover:text-brand-green transition-colors duration-300">Expertise</a>
+            <a href="/#works" class="mobile-menu-link text-white hover:text-brand-green transition-colors duration-300">Works</a>
+            <a href="/columns/" class="mobile-menu-link text-brand-green transition-colors duration-300">Column</a>
+            <a href="/#contact" class="mobile-menu-link text-white hover:text-brand-green transition-colors duration-300">Contact</a>
+        </div>
+    </div>
+
+    <!-- Breadcrumb -->
+    <div class="pt-28 pb-4 px-4 md:px-12 max-w-4xl mx-auto">
+        <nav class="font-en text-xs text-gray-500 tracking-wider">
+            <a href="/" class="hover:text-white transition-colors">Home</a>
+            <span class="mx-2">/</span>
+            <a href="/columns/" class="hover:text-white transition-colors">Column</a>
+            <span class="mx-2">/</span>
+            <span class="text-gray-400">CFP算定の始め方</span>
+        </nav>
+    </div>
+
+    <!-- Article Header -->
+    <header class="px-4 md:px-12 max-w-4xl mx-auto pb-12">
+        <div class="flex items-center gap-4 mb-6">
+            <span class="bg-brand-green/20 text-brand-green text-xs font-en font-bold px-3 py-1 tracking-wider uppercase">CFP</span>
+            <time class="text-xs text-gray-500 font-en" datetime="2026-04-04">2026.04.04</time>
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold leading-tight mb-6">
+            CFP（カーボンフットプリント）<br class="hidden md:block">算定の始め方｜<br class="hidden md:block">準備・手順・よくある疑問
+        </h1>
+        <div class="flex items-center gap-3 text-sm text-gray-400">
+            <span>著者:</span>
+            <span class="text-white font-bold">藤森 健</span>
+            <span class="text-gray-600">|</span>
+            <span>LCAエキスパート・中小企業診断士</span>
+        </div>
+    </header>
+
+    <!-- Hero Image -->
+    <div class="max-w-5xl mx-auto px-4 md:px-12 mb-16">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
+            alt="CFP算定のデータ分析イメージ" class="w-full h-[300px] md:h-[450px] object-cover">
+    </div>
+
+    <!-- Article Body -->
+    <article class="px-4 md:px-12 max-w-4xl mx-auto pb-20">
+        <div class="prose-content">
+
+            <p>取引先から「製品のカーボンフットプリント（CFP）を算定してほしい」と求められた——近年、このような要請を受ける企業が急増しています。本記事では、CFP算定を初めて行う企業担当者に向けて、必要な準備から具体的な手順、よくある疑問まで実務視点で解説します。</p>
+
+            <h2>CFP（カーボンフットプリント）とは？</h2>
+
+            <p>CFPとは、製品やサービスのライフサイクル全体で排出される温室効果ガス（GHG）の総量を、CO2換算（kg-CO2eq）で表したものです。<a href="/columns/lca-basics-for-beginners.html">LCA（ライフサイクルアセスメント）</a>の手法をベースに、温室効果ガスに焦点を絞った評価指標といえます。</p>
+
+            <p>LCAが気候変動だけでなく酸性化、水消費など複数の環境影響を評価するのに対し、<strong>CFPは温室効果ガス（GHG）に特化した指標</strong>です。そのためLCAより算定範囲が明確で、初めて環境評価に取り組む企業にとって着手しやすい入口となります。</p>
+
+            <h2>CFP算定が求められる背景</h2>
+
+            <ul>
+                <li><strong>サプライチェーン要請</strong>：大手企業がScope 3排出量把握のため、サプライヤーにCFP算定を要請するケースが増加</li>
+                <li><strong>規制強化</strong>：EUでは製品環境フットプリント（PEF）の開示義務化が進行中。日本でも業界別算定ルールの整備が加速</li>
+                <li><strong>競争優位</strong>：低CFP製品は調達先選定で有利になるケースが増えている</li>
+                <li><strong>ESG・TCFD対応</strong>：投資家や金融機関からのGHG情報開示要請への対応</li>
+            </ul>
+
+            <h2>CFP算定に必要な4つの準備</h2>
+
+            <h3>準備1: 算定の目的を明確にする</h3>
+            <p>「なぜCFPを算定するのか」によって、必要な精度や範囲が大きく変わります。</p>
+            <ul>
+                <li><strong>社内スクリーニング</strong>：大まかな傾向把握が目的。概算データでOK</li>
+                <li><strong>取引先への報告</strong>：一定の精度が必要。主要プロセスには一次データを使用</li>
+                <li><strong>第三者認証・EPD取得</strong>：高い精度とISO準拠が必須。独立したレビューも必要</li>
+            </ul>
+
+            <h3>準備2: 対象製品と機能単位を決める</h3>
+            <p>どの製品を、どういう単位で評価するかを決めます。例えば「テイクアウトコーヒー1杯（180ml）の提供」のように、<strong>消費者が受け取る機能をベースにした単位</strong>を設定します。</p>
+
+            <h3>準備3: システム境界を設定する</h3>
+            <p>原材料の採掘から廃棄までのどこからどこまでを評価対象とするかを決めます。素材メーカーであれば「Cradle-to-Gate（原材料〜工場出荷）」、完成品メーカーであれば「Cradle-to-Grave（原材料〜廃棄）」が一般的です。</p>
+
+            <h3>準備4: データ収集の体制を整える</h3>
+            <p>CFP算定で最も時間がかかるのがデータ収集です。以下のようなデータが必要になります。</p>
+            <ul>
+                <li>原材料の種類・使用量（kg）</li>
+                <li>製造工程のエネルギー消費量（電力kWh、燃料使用量）</li>
+                <li>輸送距離・手段（トラック、船舶など）</li>
+                <li>廃棄物量・処理方法</li>
+                <li>製品の歩留まり（投入量 - 完成品重量 = 製造ロス）</li>
+            </ul>
+
+            <h2>CFP算定の具体的な5ステップ</h2>
+
+            <h3>ステップ1: フロー図を作成する</h3>
+            <p>製品のライフサイクルを工程ごとに図式化します。原材料調達→製造→包装→輸送→使用→廃棄の流れを、投入物と排出物を含めて整理します。実務では<strong>消費者の使い方から逆算して遡る</strong>アプローチが、見落としを防ぐのに効果的です。</p>
+
+            <h3>ステップ2: データを収集する</h3>
+            <p>フロー図の各工程に必要なデータを集めます。自社データ（一次データ）が理想ですが、入手困難な場合はデータベース（二次データ）で補完します。</p>
+
+            <blockquote>
+                実務のポイント：Excelでデータを整理する際は、<strong>数値を直接入力するのではなく、セル参照で計算式を組む</strong>のが鉄則です。後からの修正や感度分析が格段に楽になります。
+            </blockquote>
+
+            <h3>ステップ3: データベースで原単位を割り当てる</h3>
+            <p>収集したデータ（例：ポリエチレン10kg使用）に対して、LCAデータベースから「ポリエチレン1kgあたりのCO2排出量」（原単位）を割り当てます。日本で広く使われている主要なデータベースを紹介します。</p>
+
+            <ul>
+                <li><strong>IDEA（産総研）</strong>：日本の国内データベース。約5,600プロセスを収録し、日本の平均的な製造実態を反映。国内向けのCFP算定ではまず選択肢に上がるデータベースです</li>
+                <li><strong>Ecoinvent（スイス）</strong>：世界最大級の学術データベース。国際的な比較や海外拠点の評価に適しています</li>
+                <li><strong>GaBi/Sphera</strong>：産業界との連携が強く、実測ベースのデータが豊富。鉄鋼・化学・自動車分野に強みがあります</li>
+            </ul>
+
+            <p>注意点として、IDEAのデータには<strong>約4〜4.5年のタイムラグ</strong>があります。これは政府統計の集計・検証に時間がかかるためで、2026年時点のIDEAデータは2021〜2022年頃の実態を反映しています。最新の技術変化（再エネ比率の向上など）は反映されていない可能性がある点に留意が必要です。</p>
+
+            <h3>ステップ4: 算定・集計する</h3>
+            <p>各工程の「活動量 × 原単位 = CO2排出量」を積み上げていきます。MiLCAなどのLCAソフトウェアを使う方法と、Excelで手計算する方法があります。</p>
+            <p>温室効果ガスはCO2だけでなく、メタン（CH4）や一酸化二窒素（N2O）なども含みます。これらはGWP（地球温暖化係数）を使ってCO2換算します。例えばメタンはCO2の約29.8倍、N2OはCO2の約273倍の温暖化効果があります。</p>
+
+            <h3>ステップ5: 結果を検証・解釈する</h3>
+            <p>算定結果が妥当かどうかを確認します。</p>
+            <ul>
+                <li><strong>マテリアルバランスチェック</strong>：投入量の合計 ＝ 製品重量 ＋ 廃棄物量になっているか</li>
+                <li><strong>ホットスポット分析</strong>：どの工程・材料がCFPの大部分を占めるか</li>
+                <li><strong>感度分析</strong>：不確実なデータを±20%変動させても結論が変わらないか</li>
+            </ul>
+
+            <h2>CFP算定でよくある疑問</h2>
+
+            <h3>Q. どのくらいの期間がかかる？</h3>
+            <p>初回のスクリーニング（概算評価）であれば1〜2ヶ月程度。第三者認証レベルの詳細算定では3〜6ヶ月が目安です。データ収集がスムーズかどうかで大きく変わります。</p>
+
+            <h3>Q. 社内にLCAの専門家がいなくても始められる？</h3>
+            <p>スクリーニングレベルであれば、基本的な知識を学びながら取り組むことは可能です。ただし、<strong>配分方法の選択やデータベースの使い分け</strong>など、専門的な判断が必要な場面は少なくありません。<a href="/columns/lca-outsource-or-inhouse.html">外注と社内実施の判断基準</a>も参考にしてください。</p>
+
+            <h3>Q. 一度算定すれば終わり？</h3>
+            <p>いいえ。製品や製造プロセスが変われば再算定が必要です。また、使用するデータベースのバージョン更新（例：IDEAの更新、Ecoinventのメタン追跡データ反映など）によっても数値が変わることがあります。定期的な更新を前提とした運用設計が重要です。</p>
+
+            <h3>Q. CFPの結果はどう活用できる？</h3>
+            <ul>
+                <li>製品改善の方向性を定量的に判断（ホットスポットから優先順位を設定）</li>
+                <li>取引先やESG報告への開示データとして活用</li>
+                <li>環境ラベル・EPD（環境製品宣言）の取得</li>
+                <li>新製品開発時の環境性能設計への反映</li>
+            </ul>
+
+        </div>
+
+        <!-- Author Bio -->
+        <div class="mt-16 p-8 border border-gray-700">
+            <div class="flex items-start gap-6">
+                <div class="w-16 h-16 bg-brand-green/20 flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="user" class="w-8 h-8 text-brand-green"></i>
+                </div>
+                <div>
+                    <p class="font-bold text-lg mb-1">藤森 健</p>
+                    <p class="text-sm text-gray-400 mb-3">LCAエキスパート・中小企業診断士 / sustainable& 代表</p>
+                    <p class="text-sm text-gray-400 leading-relaxed">大手コンサルティングファームにてサステナビリティ戦略・LCA算定プロジェクトを多数経験。2024年にsustainable&を設立し、中堅・中小企業のサステナビリティ経営を伴走型で支援している。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Articles -->
+        <div class="mt-16">
+            <h2 class="font-en text-2xl font-bold tracking-tighter mb-8">RELATED ARTICLES</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <a href="/columns/lca-basics-for-beginners.html" class="group border border-gray-700 hover:border-brand-green transition-colors duration-300">
+                    <div class="p-6">
+                        <span class="text-brand-green text-xs font-en font-bold tracking-wider uppercase">LCA</span>
+                        <h3 class="font-bold mt-2 mb-2 group-hover:text-brand-green transition-colors">LCA算定とは？初めての企業担当者が知るべき基礎と進め方</h3>
+                        <p class="text-sm text-gray-500">LCA算定の基本的な考え方からISO 14040の4フェーズまで、初心者向けに解説。</p>
+                    </div>
+                </a>
+                <a href="/columns/lca-outsource-or-inhouse.html" class="group border border-gray-700 hover:border-brand-green transition-colors duration-300">
+                    <div class="p-6">
+                        <span class="text-brand-green text-xs font-en font-bold tracking-wider uppercase">Strategy</span>
+                        <h3 class="font-bold mt-2 mb-2 group-hover:text-brand-green transition-colors">LCA・CFP算定を外注 or 社内実施？判断基準と成功のポイント</h3>
+                        <p class="text-sm text-gray-500">自社で行うべき範囲と、専門家に任せるべき領域の見極め方。</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </article>
+
+    <!-- CTA Section -->
+    <section class="py-20 px-4 md:px-12 bg-brand-green relative text-white overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <img src="https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?q=80&w=2574&auto=format&fit=crop"
+                alt="" aria-hidden="true" class="w-full h-full object-cover">
+        </div>
+        <div class="max-w-3xl mx-auto text-center relative z-10">
+            <h2 class="font-en text-4xl md:text-5xl font-bold tracking-tighter mb-6">START YOUR CFP.</h2>
+            <p class="text-gray-200 leading-relaxed mb-8">
+                CFP算定の進め方について相談したい、自社製品の算定を始めたいなど、<br class="hidden md:block">
+                お気軽にお問い合わせください。初回のスコープ設定からサポートします。
+            </p>
+            <a href="/#contact" class="inline-flex items-center gap-3 bg-white text-brand-green font-en font-bold py-4 px-10 hover:bg-gray-100 transition-colors duration-300">
+                <span>CONTACT US</span>
+                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-black text-white py-12 px-4 border-t border-white/10">
+        <div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <a href="/" class="font-en font-bold text-2xl tracking-tighter">sustainable&</a>
+            <div class="text-xs text-gray-500 font-en">
+                &copy; 2026 sustainable&. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Scripts -->
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

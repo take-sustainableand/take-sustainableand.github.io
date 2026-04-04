@@ -73,3 +73,86 @@ body {
 .delay-300 {
     transition-delay: 300ms;
 }
+
+/* Article Prose Content */
+.prose-content h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #1B4D3E;
+    color: #ffffff;
+}
+
+.prose-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    color: #1B4D3E;
+}
+
+.prose-content p {
+    color: #9ca3af;
+    line-height: 2;
+    margin-bottom: 1.5rem;
+}
+
+.prose-content ul,
+.prose-content ol {
+    color: #9ca3af;
+    line-height: 2;
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.prose-content ul li {
+    list-style-type: disc;
+    margin-bottom: 0.5rem;
+}
+
+.prose-content ol li {
+    list-style-type: decimal;
+    margin-bottom: 0.5rem;
+}
+
+.prose-content a {
+    color: #1B4D3E;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.prose-content a:hover {
+    opacity: 0.8;
+}
+
+.prose-content blockquote {
+    border-left: 4px solid #1B4D3E;
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    color: #d1d5db;
+    font-style: italic;
+}
+
+.prose-content strong {
+    color: #ffffff;
+}
+
+/* FAQ Accordion */
+.faq-item summary {
+    list-style: none;
+    cursor: pointer;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary .faq-icon {
+    transition: transform 0.3s ease;
+}
+
+.faq-item[open] summary .faq-icon {
+    transform: rotate(45deg);
+}
