@@ -79,4 +79,10 @@ document.addEventListener('DOMContentLoaded', () => {
             closeMenu();
         }
     });
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768 && isMenuOpen()) {
+            closeMenu();
+        }
+    });
 });

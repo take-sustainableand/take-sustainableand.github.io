@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /logs/
 
 Sitemap: https://sustainableand.com/sitemap.xml
