@@ -13,6 +13,18 @@
         gtag('js', new Date());
         gtag('config', 'G-SP1NHS97RM');
     </script>
+    <script>
+        // GA4 page_dwell_30s event - fires when user stays on page for 30 seconds
+        setTimeout(function() {
+          if (typeof gtag === 'function') {
+            gtag('event', 'page_dwell_30s', {
+              'event_category': 'engagement',
+              'event_label': document.title,
+              'value': 30
+            });
+          }
+        }, 30000);
+    </script>
     <title>sustainable& | サステナビリティ経営コンサルティング｜LCA・CFP算定・戦略策定</title>
     <meta name="description" content="sustainable&はLCA・CFP算定とサステナビリティ経営戦略を支援するコンサルティングファーム。カーボンニュートラル実現を伴走型でサポートします。">
     <meta name="robots" content="index, follow">

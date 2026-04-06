@@ -13,6 +13,18 @@
         gtag('js', new Date());
         gtag('config', 'G-SP1NHS97RM');
     </script>
+    <script>
+        // GA4 page_dwell_30s event - fires when user stays on page for 30 seconds
+        setTimeout(function() {
+          if (typeof gtag === 'function') {
+            gtag('event', 'page_dwell_30s', {
+              'event_category': 'engagement',
+              'event_label': document.title,
+              'value': 30
+            });
+          }
+        }, 30000);
+    </script>
     <title>CFP製品別算定ルール一覧｜自社製品に適用されるルールの探し方 | sustainable&</title>
     <meta name="description" content="経産省・環境省の支援事業で整備が進むCFP製品別算定ルール（PCR）の最新一覧。全10業界のルールを一覧表で比較し、自社製品に該当するルールの探し方、該当ルールがない場合の対応方法を実務視点で解説。">
     <meta name="robots" content="index, follow">
