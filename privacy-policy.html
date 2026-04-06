@@ -13,6 +13,18 @@
         gtag('js', new Date());
         gtag('config', 'G-SP1NHS97RM');
     </script>
+    <script>
+        // GA4 page_dwell_30s event - fires when user stays on page for 30 seconds
+        setTimeout(function() {
+          if (typeof gtag === 'function') {
+            gtag('event', 'page_dwell_30s', {
+              'event_category': 'engagement',
+              'event_label': document.title,
+              'value': 30
+            });
+          }
+        }, 30000);
+    </script>
     <title>プライバシーポリシー | sustainable&</title>
     <meta name="description" content="sustainable&のプライバシーポリシー。個人情報の取り扱い、利用目的、第三者提供について。">
     <meta name="robots" content="noindex, follow">

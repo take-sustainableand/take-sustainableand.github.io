@@ -13,6 +13,18 @@
         gtag('js', new Date());
         gtag('config', 'G-SP1NHS97RM');
     </script>
+    <script>
+        // GA4 page_dwell_30s event - fires when user stays on page for 30 seconds
+        setTimeout(function() {
+          if (typeof gtag === 'function') {
+            gtag('event', 'page_dwell_30s', {
+              'event_category': 'engagement',
+              'event_label': document.title,
+              'value': 30
+            });
+          }
+        }, 30000);
+    </script>
     <title>CFP（カーボンフットプリント）算定の始め方｜準備・手順・よくある疑問 | sustainable&</title>
     <meta name="description" content="CFP（カーボンフットプリント）算定を始める企業担当者向けガイド。必要な準備、算定手順、IDEAなどのデータベース、よくある疑問をわかりやすく解説します。">
     <meta name="robots" content="index, follow">
