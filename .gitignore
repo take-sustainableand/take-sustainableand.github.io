@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+
+# Claude Code
+CLAUDE.md
+.claudeignore
+logs/
+tool_audit.log
+
+# Local clones
+take-sustainableand.github.io/
+
+# Temporary image files (originals before rename)
+A_clean,*

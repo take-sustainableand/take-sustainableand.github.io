@@ -8,7 +8,7 @@
   </url>
   <url>
     <loc>https://sustainableand.com/columns/</loc>
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -33,6 +33,12 @@
   <url>
     <loc>https://sustainableand.com/columns/cfp-product-rules-guide.html</loc>
     <lastmod>2026-04-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sustainableand.com/columns/nature-footprint-basics.html</loc>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
