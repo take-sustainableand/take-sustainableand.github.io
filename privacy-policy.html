@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja" class="scroll-smooth">
+<html lang="ja">
 
 <head>
     <meta charset="UTF-8">
@@ -31,65 +31,73 @@
     <link rel="canonical" href="https://sustainableand.com/privacy-policy.html">
 
     <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><rect width=%27100%27 height=%27100%27 rx=%2712%27 fill=%27%231B4D3E%27/><text x=%2750%27 y=%2772%27 font-family=%27sans-serif%27 font-size=%2764%27 font-weight=%27bold%27 fill=%27white%27 text-anchor=%27middle%27>%26</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><rect width=%27100%27 height=%27100%27 rx=%2712%27 fill=%27%2314432F%27/><text x=%2750%27 y=%2772%27 font-family=%27sans-serif%27 font-size=%2764%27 font-weight=%27bold%27 fill=%27white%27 text-anchor=%27middle%27>%26</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 180 180%27><rect width=%27180%27 height=%27180%27 rx=%2720%27 fill=%27%2314432F%27/><text x=%2790%27 y=%27128%27 font-family=%27sans-serif%27 font-size=%27110%27 font-weight=%27bold%27 fill=%27white%27 text-anchor=%27middle%27>%26</text></svg>">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-
-    <!-- Tailwind CSS (CDN) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="js/tailwind.config.js"></script>
-
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@1.7.0"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="bg-brand-black text-white font-sans antialiased selection:bg-brand-green selection:text-white">
+<body>
 
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 flex justify-between items-center px-4 md:px-12 py-6 mix-blend-difference text-white">
-        <a href="/" class="font-en font-bold text-2xl tracking-tighter z-50">sustainable&</a>
-        <div class="hidden md:flex gap-12 font-en text-xs font-bold tracking-widest uppercase z-50">
-            <a href="/#about" class="hover:text-brand-green transition-colors duration-300">About</a>
-            <a href="/#expertise" class="hover:text-brand-green transition-colors duration-300">Expertise</a>
-            <a href="/#works" class="hover:text-brand-green transition-colors duration-300">Works</a>
-            <a href="/columns/" class="hover:text-brand-green transition-colors duration-300">Column</a>
-            <a href="/#contact" class="hover:text-brand-green transition-colors duration-300">Contact</a>
+    <!-- NAV -->
+    <nav class="nav">
+        <a href="/" class="nav__logo">sustainable<span>&amp;</span></a>
+        <div class="nav__links">
+            <a href="/#about">哲学</a>
+            <a href="/#expertise">サービス</a>
+            <a href="/#works">実績</a>
+            <a href="/columns/">コラム</a>
+            <a href="/#about-us">プロフィール</a>
+            <a href="/#faq">FAQ</a>
         </div>
-        <button id="mobile-menu-btn" class="md:hidden text-white z-50" aria-label="メニューを開く" aria-expanded="false">
-            <i data-lucide="menu" class="w-8 h-8"></i>
+        <a href="/#contact" class="nav__cta">無料相談 <span>→</span></a>
+        <button class="nav__toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="mnav">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
         </button>
     </nav>
 
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu"
-        class="fixed inset-0 z-40 bg-brand-black/95 backdrop-blur-sm flex flex-col items-center justify-center translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] md:hidden"
-        aria-hidden="true">
-        <div class="flex flex-col items-center gap-10 font-en text-2xl font-bold tracking-widest uppercase">
-            <a href="/#about" class="mobile-menu-link text-white hover:text-brand-green transition-colors duration-300">About</a>
-            <a href="/#expertise" class="mobile-menu-link text-white hover:text-brand-green transition-colors duration-300">Expertise</a>
-            <a href="/#works" class="mobile-menu-link text-white hover:text-brand-green transition-colors duration-300">Works</a>
-            <a href="/columns/" class="mobile-menu-link text-white hover:text-brand-green transition-colors duration-300">Column</a>
-            <a href="/#contact" class="mobile-menu-link text-white hover:text-brand-green transition-colors duration-300">Contact</a>
+    <!-- Mobile Menu -->
+    <div class="mnav" id="mnav" aria-hidden="true" inert>
+        <div class="mnav__head">
+            <a href="/" class="mnav__logo">sustainable<span>&amp;</span></a>
+            <button class="mnav__close" id="navClose" aria-label="メニューを閉じる">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+            </button>
         </div>
+        <nav class="mnav__links">
+            <a href="/#about"><span>哲学</span><span>01</span></a>
+            <a href="/#expertise"><span>サービス</span><span>02</span></a>
+            <a href="/#works"><span>実績</span><span>03</span></a>
+            <a href="/columns/"><span>コラム</span><span>04</span></a>
+            <a href="/#about-us"><span>プロフィール</span><span>05</span></a>
+            <a href="/#faq"><span>FAQ</span><span>06</span></a>
+        </nav>
+        <a href="/#contact" class="mnav__cta">無料相談 →</a>
     </div>
 
-    <!-- Content -->
-    <div class="pt-28 pb-20 px-4 md:px-12 max-w-4xl mx-auto">
-        <h1 class="text-3xl md:text-4xl font-bold mb-12">プライバシーポリシー</h1>
+    <!-- POLICY -->
+    <main class="policy">
+        <nav class="article__crumbs" aria-label="パンくずリスト">
+            <a href="/">Home</a><span>/</span><span>Privacy Policy</span>
+        </nav>
 
-        <div class="prose-content">
-            <p>sustainable&（以下「当社」）は、お客様の個人情報の保護を重要な責務と考え、以下のとおりプライバシーポリシーを定めます。</p>
+        <h1 class="policy__h">プライバシーポリシー</h1>
+        <p class="policy__meta">最終更新日：2026年4月4日</p>
+
+        <div class="policy__body">
+            <p>sustainable&amp;（以下「当社」）は、お客様の個人情報の保護を重要な責務と考え、以下のとおりプライバシーポリシーを定めます。</p>
 
             <h2>1. 収集する個人情報</h2>
             <p>当社は、お問い合わせフォームを通じて以下の個人情報を収集することがあります。</p>
             <ul>
                 <li>お名前</li>
+                <li>会社名（任意）</li>
                 <li>メールアドレス</li>
                 <li>お問い合わせ内容</li>
             </ul>
@@ -126,23 +134,24 @@
             <h2>8. お問い合わせ</h2>
             <p>本ポリシーに関するお問い合わせは、以下の連絡先までお願いいたします。</p>
             <ul>
-                <li><strong>事業者名</strong>：sustainable&</li>
+                <li><strong>屋号</strong>：sustainable&amp;</li>
                 <li><strong>代表者</strong>：藤森 健</li>
                 <li><strong>メール</strong>：takeshi.fujimori@sustainableand.com</li>
             </ul>
 
             <p>制定日：2026年4月4日</p>
         </div>
-    </div>
+    </main>
 
-    <!-- Footer -->
-    <footer class="bg-brand-black text-white py-12 px-4 border-t border-white/10">
-        <div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <a href="/" class="font-en font-bold text-2xl tracking-tighter">sustainable&</a>
-            <div class="text-xs text-gray-500 font-en">
-                &copy; 2026 sustainable&. All Rights Reserved.
-            </div>
-            <a href="/privacy-policy.html" class="text-xs text-gray-500 hover:text-white transition-colors">プライバシーポリシー</a>
+    <!-- FOOTER -->
+    <footer class="foot">
+        <div class="foot__top">
+            <a href="/" class="foot__logo">sustainable<span>&amp;</span></a>
+            <p class="foot__tag">環境と経済を、「&amp;」で掛け合わせる。</p>
+        </div>
+        <div class="foot__bot">
+            <span>&copy; 2026 sustainable&amp;. All Rights Reserved.</span>
+            <a href="/privacy-policy.html" aria-current="page">プライバシーポリシー</a>
         </div>
     </footer>
 

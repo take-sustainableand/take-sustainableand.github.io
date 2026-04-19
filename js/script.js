@@ -1,88 +1,61 @@
-// Initialize Icons
-lucide.createIcons();
+/* ========================================================================
+   sustainable& — site-wide script
+   モバイルナビ制御（#navToggle / #navClose / #mnav）
+   ======================================================================== */
 
-// Scroll Reveal Animation
-document.addEventListener('DOMContentLoaded', () => {
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
+(function() {
+  'use strict';
 
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
+  document.addEventListener('DOMContentLoaded', function() {
+    var toggle = document.getElementById('navToggle');
+    var close = document.getElementById('navClose');
+    var mnav = document.getElementById('mnav');
 
-    document.querySelectorAll('.reveal-text, .reveal-img').forEach(el => {
-        observer.observe(el);
-    });
+    if (!toggle || !mnav) return;
 
-    // Mobile Menu Toggle
-    const menuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const menuLinks = mobileMenu.querySelectorAll('.mobile-menu-link');
-    const navBar = document.querySelector('nav');
+    function isOpen() {
+      return mnav.getAttribute('aria-hidden') === 'false';
+    }
 
     function openMenu() {
-        mobileMenu.classList.remove('translate-x-full');
-        mobileMenu.classList.add('translate-x-0');
-        mobileMenu.setAttribute('aria-hidden', 'false');
-        menuBtn.setAttribute('aria-expanded', 'true');
-        menuBtn.setAttribute('aria-label', 'メニューを閉じる');
-        menuBtn.innerHTML = '<i data-lucide="x" class="w-8 h-8"></i>';
-        lucide.createIcons();
-        document.body.style.overflow = 'hidden';
-        navBar.classList.remove('mix-blend-difference');
+      mnav.setAttribute('aria-hidden', 'false');
+      mnav.removeAttribute('inert');
+      toggle.setAttribute('aria-expanded', 'true');
+      toggle.setAttribute('aria-label', 'メニューを閉じる');
+      document.body.style.overflow = 'hidden';
     }
 
     function closeMenu() {
-        mobileMenu.classList.remove('translate-x-0');
-        mobileMenu.classList.add('translate-x-full');
-        mobileMenu.setAttribute('aria-hidden', 'true');
-        menuBtn.setAttribute('aria-expanded', 'false');
-        menuBtn.setAttribute('aria-label', 'メニューを開く');
-        menuBtn.innerHTML = '<i data-lucide="menu" class="w-8 h-8"></i>';
-        lucide.createIcons();
-        document.body.style.overflow = '';
-        navBar.classList.add('mix-blend-difference');
+      mnav.setAttribute('aria-hidden', 'true');
+      mnav.setAttribute('inert', '');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'メニューを開く');
+      document.body.style.overflow = '';
+      toggle.focus();
     }
 
-    function isMenuOpen() {
-        return !mobileMenu.classList.contains('translate-x-full');
+    toggle.addEventListener('click', function() {
+      if (isOpen()) closeMenu(); else openMenu();
+    });
+
+    if (close) {
+      close.addEventListener('click', closeMenu);
     }
 
-    menuBtn.addEventListener('click', () => {
-        if (isMenuOpen()) {
-            closeMenu();
-        } else {
-            openMenu();
-        }
+    mnav.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', closeMenu);
     });
 
-    menuLinks.forEach(link => {
-        link.addEventListener('click', () => closeMenu());
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && isOpen()) closeMenu();
     });
 
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && isMenuOpen()) {
-            closeMenu();
-        }
-    });
-
-    mobileMenu.addEventListener('click', (e) => {
-        if (e.target === mobileMenu) {
-            closeMenu();
-        }
-    });
-
-    window.addEventListener('resize', () => {
-        if (window.innerWidth >= 768 && isMenuOpen()) {
-            closeMenu();
-        }
-    });
-});
+    var mq = window.matchMedia('(min-width: 1101px)');
+    var mqHandler = function(e) { if (e.matches && isOpen()) closeMenu(); };
+    if (mq.addEventListener) {
+      mq.addEventListener('change', mqHandler);
+    } else if (mq.addListener) {
+      mq.addListener(mqHandler);
+    }
+  });
+})();
