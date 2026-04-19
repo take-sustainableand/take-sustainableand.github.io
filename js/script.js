@@ -28,6 +28,7 @@
 
     function openMenu() {
       mnav.setAttribute('aria-hidden', 'false');
+      mnav.removeAttribute('inert');
       toggle.setAttribute('aria-expanded', 'true');
       toggle.setAttribute('aria-label', 'メニューを閉じる');
       document.body.style.overflow = 'hidden';
@@ -35,9 +36,11 @@
 
     function closeMenu() {
       mnav.setAttribute('aria-hidden', 'true');
+      mnav.setAttribute('inert', '');
       toggle.setAttribute('aria-expanded', 'false');
       toggle.setAttribute('aria-label', 'メニューを開く');
       document.body.style.overflow = '';
+      toggle.focus();
     }
 
     toggle.addEventListener('click', function() {

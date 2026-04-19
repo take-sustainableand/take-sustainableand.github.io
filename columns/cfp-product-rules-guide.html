@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja" class="scroll-smooth">
+<html lang="ja">
 
 <head>
     <meta charset="UTF-8">
@@ -51,19 +51,13 @@
     <meta name="twitter:image" content="https://sustainableand.com/images/column-cfp-product-rules.png">
 
     <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><rect width=%27100%27 height=%27100%27 rx=%2712%27 fill=%27%231B4D3E%27/><text x=%2750%27 y=%2772%27 font-family=%27sans-serif%27 font-size=%2764%27 font-weight=%27bold%27 fill=%27white%27 text-anchor=%27middle%27>%26</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><rect width=%27100%27 height=%27100%27 rx=%2712%27 fill=%27%2314432F%27/><text x=%2750%27 y=%2772%27 font-family=%27sans-serif%27 font-size=%2764%27 font-weight=%27bold%27 fill=%27white%27 text-anchor=%27middle%27>%26</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 180 180%27><rect width=%27180%27 height=%27180%27 rx=%2720%27 fill=%27%2314432F%27/><text x=%2790%27 y=%27128%27 font-family=%27sans-serif%27 font-size=%27110%27 font-weight=%27bold%27 fill=%27white%27 text-anchor=%27middle%27>%26</text></svg>">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-
-    <!-- Tailwind CSS (CDN) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="../js/tailwind.config.js"></script>
-
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@1.7.0"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/style.css">
@@ -102,73 +96,65 @@
     </script>
 </head>
 
-<body class="bg-brand-black text-white font-sans antialiased selection:bg-brand-green selection:text-white">
+<body>
 
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 flex justify-between items-center px-4 md:px-12 py-6 mix-blend-difference text-white">
-        <a href="/" class="font-en font-bold text-2xl tracking-tighter z-50">sustainable&</a>
-        <div class="hidden md:flex gap-12 font-en text-xs font-bold tracking-widest uppercase z-50">
-            <a href="/#about" class="hover:text-brand-green transition-colors duration-300">About</a>
-            <a href="/#expertise" class="hover:text-brand-green transition-colors duration-300">Expertise</a>
-            <a href="/#works" class="hover:text-brand-green transition-colors duration-300">Works</a>
-            <a href="/columns/" class="text-brand-green transition-colors duration-300">Column</a>
-            <a href="/#contact" class="hover:text-brand-green transition-colors duration-300">Contact</a>
+    <!-- NAV -->
+    <nav class="nav">
+        <a href="/" class="nav__logo">sustainable<span>&amp;</span></a>
+        <div class="nav__links">
+            <a href="/#about">哲学</a>
+            <a href="/#expertise">サービス</a>
+            <a href="/#works">実績</a>
+            <a href="/columns/" aria-current="page">コラム</a>
+            <a href="/#about-us">プロフィール</a>
+            <a href="/#faq">FAQ</a>
         </div>
-        <button id="mobile-menu-btn" class="md:hidden text-white z-50" aria-label="メニューを開く" aria-expanded="false">
-            <i data-lucide="menu" class="w-8 h-8"></i>
+        <a href="/#contact" class="nav__cta">無料相談 <span>→</span></a>
+        <button class="nav__toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="mnav">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
         </button>
     </nav>
 
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu"
-        class="fixed inset-0 z-40 bg-brand-black/95 backdrop-blur-sm flex flex-col items-center justify-center translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] md:hidden"
-        aria-hidden="true">
-        <div class="flex flex-col items-center gap-10 font-en text-2xl font-bold tracking-widest uppercase">
-            <a href="/#about" class="mobile-menu-link text-white hover:text-brand-green transition-colors duration-300">About</a>
-            <a href="/#expertise" class="mobile-menu-link text-white hover:text-brand-green transition-colors duration-300">Expertise</a>
-            <a href="/#works" class="mobile-menu-link text-white hover:text-brand-green transition-colors duration-300">Works</a>
-            <a href="/columns/" class="mobile-menu-link text-brand-green transition-colors duration-300">Column</a>
-            <a href="/#contact" class="mobile-menu-link text-white hover:text-brand-green transition-colors duration-300">Contact</a>
+    <!-- Mobile Menu -->
+    <div class="mnav" id="mnav" aria-hidden="true" inert>
+        <div class="mnav__head">
+            <a href="/" class="mnav__logo">sustainable<span>&amp;</span></a>
+            <button class="mnav__close" id="navClose" aria-label="メニューを閉じる">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+            </button>
         </div>
-    </div>
-
-    <!-- Breadcrumb -->
-    <div class="pt-28 pb-4 px-4 md:px-12 max-w-4xl mx-auto">
-        <nav class="font-en text-xs text-gray-500 tracking-wider">
-            <a href="/" class="hover:text-white transition-colors">Home</a>
-            <span class="mx-2">/</span>
-            <a href="/columns/" class="hover:text-white transition-colors">Column</a>
-            <span class="mx-2">/</span>
-            <span class="text-gray-400">CFP製品別算定ルール一覧</span>
+        <nav class="mnav__links">
+            <a href="/#about"><span>哲学</span><span>01</span></a>
+            <a href="/#expertise"><span>サービス</span><span>02</span></a>
+            <a href="/#works"><span>実績</span><span>03</span></a>
+            <a href="/columns/" aria-current="page"><span>コラム</span><span>04</span></a>
+            <a href="/#about-us"><span>プロフィール</span><span>05</span></a>
+            <a href="/#faq"><span>FAQ</span><span>06</span></a>
         </nav>
+        <a href="/#contact" class="mnav__cta">無料相談 →</a>
     </div>
 
-    <!-- Article Header -->
-    <header class="px-4 md:px-12 max-w-4xl mx-auto pb-12">
-        <div class="flex items-center gap-4 mb-6">
-            <span class="bg-brand-green/20 text-brand-green text-xs font-en font-bold px-3 py-1 tracking-wider uppercase">CFP</span>
-            <time class="text-xs text-gray-500 font-en" datetime="2026-04-05">2026.04.05</time>
-        </div>
-        <h1 class="text-3xl md:text-5xl font-bold leading-tight mb-6">
-            CFP製品別算定ルール一覧｜<br class="hidden md:block">自社製品に適用される<br class="hidden md:block">ルールの探し方
-        </h1>
-        <div class="flex items-center gap-3 text-sm text-gray-400">
-            <span>著者:</span>
-            <span class="text-white font-bold">藤森 健</span>
-            <span class="text-gray-600">|</span>
+    <!-- ARTICLE -->
+    <main class="article">
+        <nav class="article__crumbs" aria-label="パンくずリスト">
+            <a href="/">Home</a><span>/</span><a href="/columns/">Column</a><span>/</span><span>CFP製品別算定ルール一覧</span>
+        </nav>
+
+        <span class="article__cat">CFP</span>
+        <h1 class="article__h">CFP製品別算定ルール一覧｜自社製品に適用されるルールの探し方</h1>
+        <div class="article__meta">
+            <time datetime="2026-04-05">2026.04.05</time>
+            <span>/</span>
+            <span>藤森 健</span>
+            <span>/</span>
             <span>LCAエキスパート・中小企業診断士</span>
         </div>
-    </header>
 
-    <!-- Hero Image -->
-    <div class="max-w-4xl mx-auto px-4 md:px-12 mb-16">
-        <img src="../images/column-cfp-product-rules.png"
-            alt="CFP製品別算定ルール一覧イメージ" class="w-full object-contain">
-    </div>
+        <div class="article__hero">
+            <img src="../images/column-cfp-product-rules.png" alt="CFP製品別算定ルール一覧イメージ">
+        </div>
 
-    <!-- Article Body -->
-    <article class="px-4 md:px-12 max-w-4xl mx-auto pb-20">
-        <div class="prose-content">
+        <div class="article__body">
 
             <p>「取引先からCFPの提出を求められたが、自社製品はどのルールに従って算定すればいいのかわからない」——2024年以降、経済産業省と環境省の支援事業を通じて、業界別のCFP算定ルールの整備が急速に進んでいます。本記事では、2026年4月時点で公開されている全ルールの一覧と、自社製品に該当するルールの探し方を解説します。</p>
 
@@ -274,7 +260,7 @@
 
             <h3>10. 履物（Footwear）</h3>
             <ul>
-                <li><strong>発行</strong>: 環境省モデル事業（2025年2月、Ver.1.0）</li>
+                <li><strong>発行</strong>: 環境省モデル事業(2025年2月、Ver.1.0）</li>
                 <li><strong>対象製品</strong>: 履物</li>
                 <li><strong>算定範囲</strong>: Cradle-to-Grave</li>
                 <li><strong>算定単位</strong>: 製品特性に応じて設定</li>
@@ -326,68 +312,58 @@
         </div>
 
         <!-- Author Bio -->
-        <div class="mt-16 p-8 border border-gray-700">
-            <div class="flex items-start gap-6">
-                <div class="w-16 h-16 bg-brand-green/20 flex items-center justify-center flex-shrink-0">
-                    <i data-lucide="user" class="w-8 h-8 text-brand-green"></i>
-                </div>
-                <div>
-                    <p class="font-bold text-lg mb-1">藤森 健</p>
-                    <p class="text-sm text-gray-400 mb-3">LCAエキスパート・中小企業診断士 / sustainable& 代表</p>
-                    <p class="text-sm text-gray-400 leading-relaxed">大手コンサルティングファームにてサステナビリティ戦略・LCA算定プロジェクトを多数経験。2024年にsustainable&を設立し、中堅・中小企業のサステナビリティ経営を伴走型で支援している。</p>
-                </div>
+        <div class="article__bio">
+            <div class="article__bio-avatar">&amp;</div>
+            <div>
+                <p class="article__bio-name">藤森 健</p>
+                <p class="article__bio-title">LCA Expert ／ sustainable&amp; 代表</p>
+                <p class="article__bio-body">大手コンサルティングファームにてサステナビリティ戦略・LCA算定プロジェクトを多数経験。2024年にsustainable&amp;を設立し、中堅・中小企業のサステナビリティ経営を伴走型で支援している。</p>
             </div>
         </div>
 
         <!-- Related Articles -->
-        <div class="mt-16">
-            <h2 class="font-en text-2xl font-bold tracking-tighter mb-8">RELATED ARTICLES</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <a href="/columns/cfp-calculation-guide.html" class="group border border-gray-700 hover:border-brand-green transition-colors duration-300">
-                    <div class="p-6">
-                        <span class="text-brand-green text-xs font-en font-bold tracking-wider uppercase">CFP</span>
-                        <h3 class="font-bold mt-2 mb-2 group-hover:text-brand-green transition-colors">CFP（カーボンフットプリント）算定の始め方｜準備・手順・よくある疑問</h3>
-                        <p class="text-sm text-gray-500">CFP算定に必要な準備、具体的な手順、データベースの選び方を解説。</p>
-                    </div>
-                </a>
-                <a href="/columns/lca-basics-for-beginners.html" class="group border border-gray-700 hover:border-brand-green transition-colors duration-300">
-                    <div class="p-6">
-                        <span class="text-brand-green text-xs font-en font-bold tracking-wider uppercase">LCA</span>
-                        <h3 class="font-bold mt-2 mb-2 group-hover:text-brand-green transition-colors">LCA算定とは？初めての企業担当者が知るべき基礎と進め方</h3>
-                        <p class="text-sm text-gray-500">LCA算定の基本的な考え方からISO 14040の4フェーズまで、初心者向けに解説。</p>
-                    </div>
-                </a>
+        <section class="article__related">
+            <div class="article__related-inner">
+                <h3>RELATED ARTICLES</h3>
+                <div class="article__related-list">
+                    <a href="/columns/cfp-calculation-guide.html">
+                        <span>CFP</span>
+                        <h4>CFP（カーボンフットプリント）算定の始め方｜準備・手順・よくある疑問</h4>
+                    </a>
+                    <a href="/columns/lca-basics-for-beginners.html">
+                        <span>LCA</span>
+                        <h4>LCA算定とは？初めての企業担当者が知るべき基礎と進め方</h4>
+                    </a>
+                    <a href="/columns/lca-outsource-or-inhouse.html">
+                        <span>Strategy</span>
+                        <h4>LCA・CFP算定を外注 or 社内実施？判断基準と成功のポイント</h4>
+                    </a>
+                </div>
             </div>
-        </div>
-    </article>
+        </section>
+    </main>
 
-    <!-- CTA Section -->
-    <section class="py-20 px-4 md:px-12 bg-brand-green relative text-white overflow-hidden">
-        <div class="absolute inset-0 opacity-10">
-            <img src="../images/contact-bg.jpg"
-                alt="" aria-hidden="true" class="w-full h-full object-cover">
+    <!-- CTA -->
+    <section class="page-cta">
+        <div class="page-cta__bg">
+            <img src="../images/contact-bg.jpg" alt="" aria-hidden="true">
         </div>
-        <div class="max-w-3xl mx-auto text-center relative z-10">
-            <h2 class="font-en text-4xl md:text-5xl font-bold tracking-tighter mb-6">FIND YOUR RULE.</h2>
-            <p class="text-gray-200 leading-relaxed mb-8">
-                自社製品に該当するルールの特定から、CFP算定の実行まで一貫してサポートします。<br class="hidden md:block">
-                ルール選定や算定範囲の判断に迷ったら、お気軽にご相談ください。
-            </p>
-            <a href="/#contact" class="inline-flex items-center gap-3 bg-white text-brand-green font-en font-bold py-4 px-10 hover:bg-gray-100 transition-colors duration-300">
-                <span>CONTACT US</span>
-                <i data-lucide="arrow-right" class="w-5 h-5"></i>
-            </a>
+        <div class="page-cta__inner">
+            <h2>自社製品のルール特定から、<br>算定実行までサポートします。</h2>
+            <p>ルール選定・システム境界・配分方法の判断まで、<br>CFP算定の実務を一貫して伴走します。</p>
+            <a href="/#contact">無料相談を予約 →</a>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-brand-black text-white py-12 px-4 border-t border-white/10">
-        <div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <a href="/" class="font-en font-bold text-2xl tracking-tighter">sustainable&</a>
-            <div class="text-xs text-gray-500 font-en">
-                &copy; 2026 sustainable&. All Rights Reserved.
-            </div>
-            <a href="/privacy-policy.html" class="text-xs text-gray-500 hover:text-white transition-colors">プライバシーポリシー</a>
+    <!-- FOOTER -->
+    <footer class="foot">
+        <div class="foot__top">
+            <a href="/" class="foot__logo">sustainable<span>&amp;</span></a>
+            <p class="foot__tag">環境と経済を、「&amp;」で掛け合わせる。</p>
+        </div>
+        <div class="foot__bot">
+            <span>&copy; 2026 sustainable&amp;. All Rights Reserved.</span>
+            <a href="/privacy-policy.html">プライバシーポリシー</a>
         </div>
     </footer>
 
