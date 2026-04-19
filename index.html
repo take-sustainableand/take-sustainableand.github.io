@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja" class="scroll-smooth">
+<html lang="ja">
 
 <head>
     <meta charset="UTF-8">
@@ -48,550 +48,472 @@
     <meta name="twitter:image" content="https://sustainableand.com/images/og-image.jpg">
 
     <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><rect width=%27100%27 height=%27100%27 rx=%2712%27 fill=%27%231B4D3E%27/><text x=%2750%27 y=%2772%27 font-family=%27sans-serif%27 font-size=%2764%27 font-weight=%27bold%27 fill=%27white%27 text-anchor=%27middle%27>%26</text></svg>">
-    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 180 180%27><rect width=%27180%27 height=%27180%27 rx=%2720%27 fill=%27%231B4D3E%27/><text x=%2790%27 y=%27128%27 font-family=%27sans-serif%27 font-size=%27110%27 font-weight=%27bold%27 fill=%27white%27 text-anchor=%27middle%27>%26</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><rect width=%27100%27 height=%27100%27 rx=%2712%27 fill=%27%2314432F%27/><text x=%2750%27 y=%2772%27 font-family=%27sans-serif%27 font-size=%2764%27 font-weight=%27bold%27 fill=%27white%27 text-anchor=%27middle%27>%26</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 180 180%27><rect width=%27180%27 height=%27180%27 rx=%2720%27 fill=%27%2314432F%27/><text x=%2790%27 y=%27128%27 font-family=%27sans-serif%27 font-size=%27110%27 font-weight=%27bold%27 fill=%27white%27 text-anchor=%27middle%27>%26</text></svg>">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
         rel="stylesheet">
-
-    <!-- Tailwind CSS (CDN) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="js/tailwind.config.js"></script>
-
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@1.7.0"></script>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="bg-brand-black text-white font-sans antialiased selection:bg-brand-green selection:text-white">
+<body>
 
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 flex justify-between items-center px-4 md:px-12 py-6 mix-blend-difference text-white">
-        <div class="font-en font-bold text-2xl tracking-tighter z-50">sustainable&</div>
-
-        <!-- Desktop Menu -->
-        <div class="hidden md:flex gap-12 font-en text-xs font-bold tracking-widest uppercase z-50">
-            <a href="#about" class="hover:text-brand-green transition-colors duration-300">About</a>
-            <a href="#expertise" class="hover:text-brand-green transition-colors duration-300">Expertise</a>
-            <a href="#works" class="hover:text-brand-green transition-colors duration-300">Works</a>
-            <a href="#about-us" class="hover:text-brand-green transition-colors duration-300">About Us</a>
-            <a href="#column" class="hover:text-brand-green transition-colors duration-300">Column</a>
-            <a href="#faq" class="hover:text-brand-green transition-colors duration-300">FAQ</a>
-            <a href="#contact" class="hover:text-brand-green transition-colors duration-300">Contact</a>
+    <!-- NAV -->
+    <nav class="nav">
+        <a href="/" class="nav__logo">sustainable<span>&amp;</span></a>
+        <div class="nav__links">
+            <a href="#about">哲学</a>
+            <a href="#expertise">サービス</a>
+            <a href="#works">実績</a>
+            <a href="columns/index.html">コラム</a>
+            <a href="#about-us">プロフィール</a>
+            <a href="#faq">FAQ</a>
         </div>
-
-        <!-- Mobile Menu Button -->
-        <button id="mobile-menu-btn" class="md:hidden text-white z-50" aria-label="メニューを開く" aria-expanded="false">
-            <i data-lucide="menu" class="w-8 h-8"></i>
+        <a href="#contact" class="nav__cta">無料相談 <span>→</span></a>
+        <button class="nav__toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="mnav">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
         </button>
     </nav>
 
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu"
-        class="fixed inset-0 z-40 bg-brand-black/95 backdrop-blur-sm flex flex-col items-center justify-center translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] md:hidden"
-        aria-hidden="true">
-        <div class="flex flex-col items-center gap-10 font-en text-2xl font-bold tracking-widest uppercase">
-            <a href="#about" class="mobile-menu-link text-white hover:text-brand-green transition-colors duration-300">About</a>
-            <a href="#expertise" class="mobile-menu-link text-white hover:text-brand-green transition-colors duration-300">Expertise</a>
-            <a href="#works" class="mobile-menu-link text-white hover:text-brand-green transition-colors duration-300">Works</a>
-            <a href="#about-us" class="mobile-menu-link text-white hover:text-brand-green transition-colors duration-300">About Us</a>
-            <a href="#column" class="mobile-menu-link text-white hover:text-brand-green transition-colors duration-300">Column</a>
-            <a href="#faq" class="mobile-menu-link text-white hover:text-brand-green transition-colors duration-300">FAQ</a>
-            <a href="#contact" class="mobile-menu-link text-white hover:text-brand-green transition-colors duration-300">Contact</a>
+    <!-- Mobile Menu -->
+    <div class="mnav" id="mnav" aria-hidden="true">
+        <div class="mnav__head">
+            <a href="/" class="mnav__logo">sustainable<span>&amp;</span></a>
+            <button class="mnav__close" id="navClose" aria-label="メニューを閉じる">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+            </button>
         </div>
+        <nav class="mnav__links">
+            <a href="#about"><span>哲学</span><span>01</span></a>
+            <a href="#expertise"><span>サービス</span><span>02</span></a>
+            <a href="#works"><span>実績</span><span>03</span></a>
+            <a href="columns/index.html"><span>コラム</span><span>04</span></a>
+            <a href="#about-us"><span>プロフィール</span><span>05</span></a>
+            <a href="#faq"><span>FAQ</span><span>06</span></a>
+        </nav>
+        <a href="#contact" class="mnav__cta">無料相談 →</a>
     </div>
 
-    <!-- Hero Section -->
-    <header class="relative w-full h-screen flex flex-col justify-end pb-12 px-4 md:px-12 overflow-hidden">
-        <!-- Full Screen Background Image -->
-        <div class="absolute inset-0 z-0">
-            <img src="images/hero.jpg"
-                alt="緑豊かな森林の風景" class="w-full h-full object-cover opacity-60" width="1920" height="1080">
-            <div class="absolute inset-0 bg-black/30"></div>
+    <!-- HERO -->
+    <header class="hero">
+        <div class="hero__meta">
+            <span class="hero__meta-c">Sustainability Management Consulting</span>
         </div>
 
-        <div
-            class="relative z-10 w-full border-t border-white/30 pt-8 flex flex-col md:flex-row justify-between items-end">
-            <div class="mb-8 md:mb-0">
-                <p
-                    class="font-en text-xs font-bold tracking-widest mb-4 uppercase text-brand-green bg-white/10 backdrop-blur-md inline-block px-4 py-1">
-                    Sustainability Management Consulting</p>
-                <h1 class="font-en text-huge font-bold tracking-tighter text-white mb-2">
-                    SUSTAINABLE<br>
-                    <span class="text-brand-green">&</span> BEYOND.
-                </h1>
-            </div>
+        <div class="hero__grid">
+            <div class="hero__main">
+                <p class="hero__eyebrow"><b>01</b><em>—</em>Editorial · 2026</p>
 
-            <div class="max-w-md text-right md:text-left">
-                <p class="text-sm md:text-base leading-relaxed font-medium text-gray-200 mb-8">
-                    サステナビリティとの掛け算で、<br>
-                    未来に「成長」と「感動」を。<br>
+                <h1 class="hero__h">
+                    サステナビリティを、<br>次の<u>成長戦略</u>に。
+                </h1>
+
+                <p class="hero__lede">
+                    LCAエキスパート・中小企業診断士が、算定・戦略・実行まで、<b>経営の言語</b>で伴走します。
                 </p>
-                <div
-                    class="font-en text-xs tracking-widest flex items-center gap-4 justify-end md:justify-start opacity-70">
-                    SCROLL TO EXPLORE <i data-lucide="arrow-down" class="w-4 h-4 animate-bounce"></i>
+
+                <div class="hero__ctas">
+                    <a href="#contact" class="btn btn--p">無料相談を予約 <span>→</span></a>
+                    <a href="#expertise" class="btn btn--s">サービス一覧</a>
                 </div>
             </div>
+
+            <aside class="brief" aria-label="Firm capability brief">
+                <div class="brief__head">
+                    <span class="brief__tag">Capability Brief</span>
+                    <span class="brief__id">File / N°01</span>
+                </div>
+
+                <div class="brief__body">
+                    <p class="brief__kicker">当社が担う領域</p>
+                    <h3 class="brief__h">算定から実行まで、<br>経営の言語で。</h3>
+
+                    <ol class="brief__list">
+                        <li>
+                            <span class="brief__n">01</span>
+                            <div class="brief__item">
+                                <h4>算定 <em>Measurement</em></h4>
+                                <p>LCA／CFP／Scope 1-3。ISO 14040 / 14067 準拠で、意思決定に耐える数字を整える。</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="brief__n">02</span>
+                            <div class="brief__item">
+                                <h4>戦略 <em>Strategy</em></h4>
+                                <p>SBTi・TCFD・ISSB 等の国際枠組みを踏まえ、事業計画に統合可能な削減・開示戦略を設計する。</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="brief__n">03</span>
+                            <div class="brief__item">
+                                <h4>実行 <em>Execution</em></h4>
+                                <p>調達・製造・営業の現場に伴走し、目標値を日々のKPIに落とし込み、確実に運用に乗せる。</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="brief__n">04</span>
+                            <div class="brief__item">
+                                <h4>教育 <em>Enablement</em></h4>
+                                <p>社内講座・レビュー・第三者意見書。自走できるサステナビリティ組織を共に育てる。</p>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="brief__foot">
+                    <div class="brief__foot-col">
+                        <span class="brief__foot-k">Representative</span>
+                        <span class="brief__foot-v">藤森 健 ／ Takeshi Fujimori</span>
+                    </div>
+                    <div class="brief__foot-col">
+                        <span class="brief__foot-k">Credentials</span>
+                        <span class="brief__foot-v">LCAエキスパート・中小企業診断士</span>
+                    </div>
+                    <div class="brief__foot-col">
+                        <span class="brief__foot-k">Est.</span>
+                        <span class="brief__foot-v">2024, Tokyo</span>
+                    </div>
+                </div>
+            </aside>
         </div>
     </header>
 
-    <!-- About / Philosophy Section -->
-    <section id="about" class="py-20 md:py-32 px-4 md:px-8 max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
-            <div class="md:col-span-4">
-                <h2 class="font-en text-5xl md:text-7xl font-bold tracking-tighter mb-6 leading-none reveal-text">
-                    LOGIC<br>
-                    <span class="text-brand-green">X</span><br>
-                    PASSION.
+    <!-- ABOUT / PHILOSOPHY -->
+    <section id="about" class="philo">
+        <div class="philo__left">
+            <span class="kicker">01 · Philosophy</span>
+            <h2 class="philo__h">
+                And,<br>
+                <em>therefore</em><br>
+                sustainable.
+            </h2>
+        </div>
+        <div class="philo__right">
+            <p class="philo__lead">
+                環境と経済を、<em>&amp;</em>で<br>掛け合わせる。
+            </p>
+            <p class="philo__body">
+                豊富な経験に裏打ちされた着実な実行で、その先にある企業の成長、そして社会や従業員など、関わるすべてのステークホルダーへの感動を共に創り出します。
+            </p>
+        </div>
+    </section>
+
+    <!-- EXPERTISE -->
+    <section id="expertise" class="exp">
+        <div class="exp__head">
+            <div>
+                <span class="kicker">02 · Expertise</span>
+                <h2>どこから始めるべきか。</h2>
+            </div>
+        </div>
+
+        <!-- Comparison table -->
+        <div class="exp__table">
+            <div class="exp__row exp__row--head">
+                <div>Service</div>
+                <div>形態</div>
+                <div>期間目安</div>
+                <div>費用目安</div>
+                <div>こんな方に</div>
+            </div>
+
+            <div class="exp__row">
+                <div class="exp__svc">
+                    <span>01 · Advisor</span>
+                    <h3>サステナビリティ<br>経営アドバイザー・顧問</h3>
+                </div>
+                <div><b>月額</b><small>継続 / 毎月1–2回</small></div>
+                <div><b>6ヶ月〜</b><small>継続前提</small></div>
+                <div><b>月額制</b><small>応相談</small></div>
+                <div><small>戦略から伴走してほしい / 経営会議資料を整えたい</small></div>
+            </div>
+
+            <div class="exp__row">
+                <div class="exp__svc">
+                    <span>02 · LCA · CFP · NF</span>
+                    <h3>算定・レビュー・<br>自立化教育</h3>
+                </div>
+                <div><b>プロジェクト</b><small>単発可 / 複数フェーズ可</small></div>
+                <div><b>1〜6ヶ月</b><small>精度による</small></div>
+                <div><b>¥10万〜</b><small>教育・レビュー</small></div>
+                <div><small>初めて算定したい / 第三者レビューが必要</small></div>
+            </div>
+
+            <div class="exp__row">
+                <div class="exp__svc">
+                    <span>03 · × AI</span>
+                    <h3>サステナビリティ<br>×AI活用支援</h3>
+                </div>
+                <div><b>プロジェクト</b><small>スポット可</small></div>
+                <div><b>1〜3ヶ月</b><small>PoC単位</small></div>
+                <div><b>応相談</b><small>範囲による</small></div>
+                <div><small>算定業務を効率化したい / データ分析を高度化したい</small></div>
+            </div>
+        </div>
+
+        <!-- Quick picks -->
+        <div class="exp__picks">
+            <h4 class="exp__picks-h">課題から探す</h4>
+            <div class="exp__picks-grid">
+                <a href="#expertise">
+                    <span class="i">→</span>
+                    <b>初めて算定する</b>
+                    <small>まずは教育 + スクリーニングから</small>
+                    <em>Service 02</em>
+                </a>
+                <a href="#expertise">
+                    <span class="i">→</span>
+                    <b>戦略から相談したい</b>
+                    <small>月額で経営課題と並走</small>
+                    <em>Service 01</em>
+                </a>
+                <a href="#expertise">
+                    <span class="i">→</span>
+                    <b>算定業務を効率化</b>
+                    <small>AI導入・自動化を支援</small>
+                    <em>Service 03</em>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- WORKS -->
+    <section id="works" class="works">
+        <div class="works__head">
+            <div>
+                <span class="kicker works__k">03 · Case Studies</span>
+                <h2>実績</h2>
+            </div>
+        </div>
+
+        <article class="case">
+            <div class="case__img">
+                <img src="images/works-portfolio.jpg" alt="化学メーカーの低炭素ポートフォリオ転換">
+            </div>
+            <div class="case__body">
+                <div class="case__spec">
+                    <div><small>業界</small><b>化学</b></div>
+                    <div><small>サービス</small><b>Advisor + LCA</b></div>
+                    <div><small>テーマ</small><b>ポートフォリオ転換</b></div>
+                </div>
+                <h3>低炭素ポートフォリオへの転換を、経営判断の軸に</h3>
+                <p>既存の主力製品群を横断したLCA比較を通じて、低炭素化の優先順位を可視化。投資配分・事業ポートフォリオ見直しの判断軸として、経営層に提供した。</p>
+                <ul class="case__points">
+                    <li>LCA評価が<b>既存事業の転換判断における主要な材料</b>として機能</li>
+                    <li>低炭素化の方向性が<b>経営の意思決定レベル</b>で明確化</li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="case case--rev">
+            <div class="case__img">
+                <img src="images/works-upstream-lca.jpg" alt="研究開発段階の上流LCA評価">
+            </div>
+            <div class="case__body">
+                <div class="case__spec">
+                    <div><small>業界</small><b>製造(R&amp;D)</b></div>
+                    <div><small>サービス</small><b>LCA</b></div>
+                    <div><small>テーマ</small><b>上流LCA評価</b></div>
+                </div>
+                <h3>企画段階のLCAを、事業戦略の起点に</h3>
+                <p>研究開発の初期フェーズにおいて、多様な原材料・製造・輸送パターンを短期間で算定。事業環境分析と組み合わせ、事業戦略の重要なインプットとして活用された。</p>
+                <ul class="case__points">
+                    <li>短期間で<b>複数の原材料・製造・輸送パターン</b>を並列評価</li>
+                    <li>結果が<b>事業戦略検討の重要インプット</b>として機能</li>
+                    <li>結果を踏まえ、<b>実証実験フェーズへ進行</b></li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="case">
+            <div class="case__img">
+                <img src="images/works-new-business.jpg" alt="カーボンニュートラル新規事業の企画・立ち上げ">
+            </div>
+            <div class="case__body">
+                <div class="case__spec">
+                    <div><small>業界</small><b>サービス</b></div>
+                    <div><small>サービス</small><b>Advisor + PMO</b></div>
+                    <div><small>テーマ</small><b>新規事業立ち上げ</b></div>
+                </div>
+                <h3>企画から事業化まで、一気通貫で伴走</h3>
+                <p>カーボンニュートラルをテーマとした新規事業について、市場調査からビジネスモデル構築、パートナー選定・交渉、サービスリリースまで伴走。構想段階から事業化フェーズまで到達した。</p>
+                <ul class="case__points">
+                    <li>市場調査からリリースまでのプロセスを<b>一気通貫で支援</b></li>
+                    <li><b>事業化フェーズへ到達</b></li>
+                </ul>
+            </div>
+        </article>
+    </section>
+
+    <!-- COLUMN -->
+    <section id="column" class="col">
+        <div class="col__head">
+            <div>
+                <span class="kicker">04 · Column</span>
+                <h2>実務コラム</h2>
+            </div>
+            <a href="columns/index.html" class="col__more">すべての記事を見る →</a>
+        </div>
+
+        <div class="col__list">
+            <a href="columns/nature-footprint-basics.html" class="col__feat">
+                <div class="col__feat-img">
+                    <img src="images/column-nature-footprint-basics.png" alt="ネイチャーフットプリントの概念イメージ">
+                </div>
+                <div class="col__feat-body">
+                    <span class="col__cat">Nature</span>
+                    <h3>ネイチャーフットプリントとは？<br>カーボンの「次」に来る企業の環境評価</h3>
+                    <p>生物多様性・生態系サービスの定量評価手法、TNFD・ISSB動向、中堅中小企業が備えるべきポイントを解説。</p>
+                    <time>2026.04.08 · 10 min read</time>
+                </div>
+            </a>
+            <div class="col__rest">
+                <a href="columns/cfp-product-rules-guide.html">
+                    <div class="col__thumb"><img src="images/column-cfp-product-rules.png" alt="CFP製品別算定ルール一覧イメージ"></div>
+                    <div class="col__rest-body">
+                        <span class="col__cat">CFP</span>
+                        <h4>CFP製品別算定ルール一覧｜自社製品に適用されるルールの探し方</h4>
+                        <time>2026.04.05</time>
+                    </div>
+                </a>
+                <a href="columns/lca-basics-for-beginners.html">
+                    <div class="col__thumb"><img src="images/column-lca-basics.png" alt="LCA算定の基礎イメージ"></div>
+                    <div class="col__rest-body">
+                        <span class="col__cat">LCA</span>
+                        <h4>LCA算定とは？初めての企業担当者が知るべき基礎と進め方</h4>
+                        <time>2026.04.04</time>
+                    </div>
+                </a>
+                <a href="columns/lca-outsource-or-inhouse.html">
+                    <div class="col__thumb"><img src="images/column-outsource-inhouse.png" alt="LCA外注 or 社内実施イメージ"></div>
+                    <div class="col__rest-body">
+                        <span class="col__cat">Strategy</span>
+                        <h4>LCA・CFP算定を外注 or 社内実施？判断基準と成功のポイント</h4>
+                        <time>2026.04.04</time>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT US -->
+    <section id="about-us" class="au">
+        <div class="au__head">
+            <span class="kicker">05 · Profile</span>
+            <h2>プロフィール</h2>
+        </div>
+        <div class="au__grid">
+            <dl class="au__dl">
+                <div><dt>Name</dt><dd>sustainable&amp;</dd></div>
+                <div><dt>Representative</dt><dd>藤森 健<span>LCAエキスパート・中小企業診断士</span></dd></div>
+                <div><dt>Established</dt><dd>2024</dd></div>
+                <div><dt>Based in</dt><dd>Tokyo, Japan</dd></div>
+                <div><dt>Contact</dt><dd>takeshi.fujimori@sustainableand.com</dd></div>
+            </dl>
+            <div class="au__img">
+                <img src="images/about-office.jpg" alt="東京のオフィス">
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq">
+        <div class="faq__head">
+            <span class="kicker">06 · FAQ</span>
+            <h2>よくいただくご質問</h2>
+        </div>
+        <div class="faq__list">
+            <details open>
+                <summary><span>どのようなサービスを提供していますか？</span><i>+</i></summary>
+                <p>主に3つのサービスをご提供しています。サステナビリティ経営アドバイザー・顧問（月額型）では、戦略策定から実行、算定の活用、社内体制構築まで包括的に伴走します。LCA/CFP/ネイチャーフットプリントの算定・レビュー・アドバイザリーでは、プロジェクト単位でご支援します。サステナビリティ業務へのAI導入・活用支援も行っています。</p>
+            </details>
+            <details>
+                <summary><span>LCA・CFP算定にはどのくらいの期間がかかりますか？</span><i>+</i></summary>
+                <p>概算評価（スクリーニング）であれば1〜2ヶ月、第三者認証レベルの詳細算定であれば3〜6ヶ月が目安です。対象製品の複雑さやデータの入手状況によって変動しますので、まずはヒアリングの上でスケジュールをご提案します。</p>
+            </details>
+            <details>
+                <summary><span>中小企業でも対応可能ですか？</span><i>+</i></summary>
+                <p>はい、中堅・中小企業のご支援を積極的に行っています。代表の藤森は中小企業診断士の資格を保有しており、限られたリソースの中で最大の効果を出すための実践的なアプローチをご提案します。まずはスクリーニングLCAから始めて段階的に精度を高めていく方法もあります。</p>
+            </details>
+            <details>
+                <summary><span>費用の目安を教えてください。</span><i>+</i></summary>
+                <p>LCA/CFPの自立化教育（社内人材育成）やクリティカルレビューは10万円〜でご提供しています。算定の伴走支援やアドバイザリー、サステナビリティ経営顧問については、内容・期間に応じたお見積りとなります。まずはお気軽にご相談ください。</p>
+            </details>
+            <details>
+                <summary><span>どのような業界に対応していますか？</span><i>+</i></summary>
+                <p>化学、製造業、食品、サービス業など幅広い業界に対応しています。LCA算定では業界固有の算定ルール（製品別カテゴリルールなど）への対応も重要です。これまでの実績を活かし、業界特性を踏まえた最適な方法論をご提案します。</p>
+            </details>
+            <details>
+                <summary><span>リモートでの対応は可能ですか？</span><i>+</i></summary>
+                <p>はい、オンラインでの打ち合わせ・プロジェクト進行に対応しています。全国どこからでもご依頼いただけます。必要に応じて対面でのキックオフミーティングや現地調査も実施します。</p>
+            </details>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+        <div class="contact__bg">
+            <img src="images/contact-bg.jpg" alt="" aria-hidden="true">
+        </div>
+        <div class="contact__inner">
+            <div class="contact__left">
+                <span class="kicker contact__k">07 · Let's Talk</span>
+                <h2 class="contact__h">
+                    まずは30分、<br>
+                    <em>お話しませんか。</em>
                 </h2>
-            </div>
-            <div class="md:col-span-8 flex flex-col gap-8 reveal-text" style="transition-delay: 100ms;">
-                <p class="text-lg md:text-2xl font-bold leading-relaxed text-brand-green">
-                    優先度が落ちがちなサステナビリティを、<br>
-                    ワクワクする成長戦略へ。
+                <p class="contact__lede">
+                    サステナビリティ経営のご相談、LCA算定のご依頼、料金感のすり合わせ——<br>
+                    どんな段階でも、お気軽にお問い合わせください。
                 </p>
-                <p class="text-gray-400 leading-loose">
-                    sustainable&は、環境と経済を「&」で掛け合わせます。
-                    豊富な経験に裏打ちされた着実な実行で、その先にある企業の成長、そして社会や従業員など、関わるすべてのステークホルダーへの感動を共に創り出します。
-                </p>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
-                    <div class="border border-gray-700 p-6">
-                        <h3 class="font-en text-xl font-bold mb-2 text-white">2024</h3>
-                        <p class="text-sm text-gray-400">Established</p>
-                    </div>
-                    <div class="border border-gray-700 p-6">
-                        <h3 class="font-en text-xl font-bold mb-2 text-white">Tokyo</h3>
-                        <p class="text-sm text-gray-400">Based In</p>
-                    </div>
-                </div>
+                <ul class="contact__info">
+                    <li>
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z"/><polyline points="4,6 12,13 20,6"/></svg>
+                        <span>takeshi.fujimori@sustainableand.com</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.5-7-12a7 7 0 1 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                        <span>Tokyo, Japan</span>
+                    </li>
+                </ul>
             </div>
+            <form class="contact__form" action="https://formspree.io/f/mldzajpw" method="POST">
+                <label>お名前
+                    <input type="text" name="name" required placeholder="山田 太郎">
+                </label>
+                <label>会社名 <em>(任意)</em>
+                    <input type="text" name="company" placeholder="株式会社◯◯">
+                </label>
+                <label>メールアドレス
+                    <input type="email" name="email" required placeholder="name@company.com">
+                </label>
+                <label>ご相談内容
+                    <textarea name="message" rows="4" required placeholder="現状のお困りごと、検討中のテーマなど"></textarea>
+                </label>
+                <button type="submit">送信する <span>→</span></button>
+                <small>※ 2営業日以内にご返信します</small>
+            </form>
         </div>
     </section>
 
-    <!-- Expertise / Services (Bento Grid Layout) -->
-    <section id="expertise" class="py-20 px-4 md:px-8 bg-brand-gray text-brand-black">
-        <div class="max-w-screen-2xl mx-auto">
-            <div class="flex justify-between items-end mb-12 border-b-2 border-brand-black pb-4">
-                <h2 class="font-en text-4xl md:text-6xl font-bold tracking-tighter">EXPERTISE</h2>
-                <span class="font-en text-sm tracking-widest">Our Core Services</span>
-            </div>
-
-            <!-- Bento Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-6 h-auto md:h-[800px]">
-
-                <!-- Item 1: Large Left (Sustainability Advisor) -->
-                <div
-                    class="md:col-span-3 md:row-span-2 group relative bg-brand-black overflow-hidden cursor-pointer min-h-[400px]">
-                    <div class="img-zoom-container h-full w-full absolute inset-0">
-                        <img src="images/expertise-strategy.jpg"
-                            alt="サステナビリティ経営アドバイザー・顧問" loading="lazy"
-                            class="img-zoom w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-700">
-                    </div>
-                    <div
-                        class="absolute inset-0 bg-black/40 group-hover:bg-brand-green/80 transition-colors duration-500">
-                    </div>
-                    <div class="absolute bottom-0 left-0 p-8 md:p-12 text-white">
-                        <span
-                            class="border border-white px-3 py-1 text-xs font-en uppercase tracking-widest mb-4 inline-block bg-black/30 backdrop-blur-sm">01</span>
-                        <h3 class="font-en text-3xl md:text-5xl font-bold mb-2">Sustainability Advisor</h3>
-                        <p class="text-sm font-bold text-white mb-2">サステナビリティ経営アドバイザー・顧問（月額型）</p>
-                        <p class="mt-2 text-sm md:text-base max-w-lg text-gray-200">
-                            気候変動・資源循環・生物多様性——多様なテーマに、オーダーメイドで伴走します。戦略策定から実行、LCA/CFP算定の活用、社内体制の構築まで。
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Item 2: Top Right (LCA/CFP/NF) -->
-                <div
-                    class="md:col-span-2 group relative bg-brand-green text-white p-8 md:p-10 flex flex-col justify-between overflow-hidden">
-                    <div class="absolute inset-0 z-0">
-                        <img src="images/expertise-lca.jpg"
-                            alt="LCA・CFP・ネイチャーフットプリント算定" loading="lazy" class="w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-opacity">
-                    </div>
-                    <div class="relative z-10">
-                        <span class="font-en text-xs tracking-widest mb-2 block">02</span>
-                        <h3 class="font-en text-2xl md:text-3xl font-bold mb-2">LCA / CFP / NF</h3>
-                        <p class="text-sm font-bold text-white mb-2">算定・レビュー・アドバイザリー（プロジェクト型）</p>
-                        <p class="text-sm text-gray-200 leading-relaxed">
-                            既存製品の算定から、新規事業・新製品の計画段階における環境評価まで。算定支援、クリティカルレビュー、自立化教育、アドバイザリーをプロジェクト単位でご提供します。
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Item 3: Bottom Right (AI) -->
-                <div
-                    class="md:col-span-2 group relative bg-brand-black text-white p-8 md:p-10 flex flex-col justify-between overflow-hidden">
-                    <div class="absolute inset-0 z-0">
-                        <img src="images/expertise-execution.jpg"
-                            alt="サステナビリティ×AI活用" loading="lazy" class="w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-opacity">
-                    </div>
-                    <div class="relative z-10">
-                        <span class="font-en text-xs tracking-widest mb-2 block">03</span>
-                        <h3 class="font-en text-2xl md:text-3xl font-bold mb-4">Sustainability × AI</h3>
-                        <p class="text-sm text-gray-200 leading-relaxed">
-                            サステナビリティ業務へのAI導入・活用を支援します。算定業務の効率化から、データ分析の高度化まで、実務に根ざしたAI活用をご提案します。
-                        </p>
-                    </div>
-                </div>
-
-            </div>
+    <!-- FOOTER -->
+    <footer class="foot">
+        <div class="foot__top">
+            <a href="/" class="foot__logo">sustainable<span>&amp;</span></a>
+            <p class="foot__tag">環境と経済を、「&amp;」で掛け合わせる。</p>
         </div>
-    </section>
-
-    <!-- Works / Track Record -->
-    <section id="works" class="py-32 px-4 md:px-12 bg-brand-black text-white">
-        <div class="max-w-screen-2xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-24 border-b border-white/20 pb-6">
-                <h2 class="font-en text-5xl md:text-7xl font-bold tracking-tighter">WORKS</h2>
-                <a href="#contact"
-                    class="group flex items-center gap-2 font-en text-sm tracking-widest hover:text-brand-green transition-colors mt-8 md:mt-0">
-                    GET IN TOUCH <i data-lucide="arrow-right"
-                        class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
-                </a>
-            </div>
-
-            <div class="space-y-20">
-                <!-- Case 1 -->
-                <div class="group grid grid-cols-1 md:grid-cols-12 gap-8 items-center reveal-text">
-                    <div class="md:col-span-7 overflow-hidden">
-                        <img src="images/works-chemical.jpg"
-                            alt="化学メーカーの低炭素ポートフォリオ転換プロジェクト" loading="lazy"
-                            class="w-full h-[400px] object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
-                    </div>
-                    <div class="md:col-span-5">
-                        <span
-                            class="text-brand-green font-en font-bold text-xs tracking-widest uppercase mb-4 block">Chemical
-                            Industry</span>
-                        <h3 class="text-3xl font-bold mb-6">低炭素ポートフォリオ転換</h3>
-                        <p class="text-gray-400 leading-relaxed mb-8">
-                            大手化学メーカーにおいて低炭素製品へのポートフォリオ転換戦略を策定。市場競争力の強化と環境負荷低減を同時に実現する戦略を描きました。
-                        </p>
-                        <div class="flex gap-4">
-                            <span class="border border-white/20 px-3 py-1 text-xs font-en text-gray-400">LCA
-                                Analysis</span>
-                            <span class="border border-white/20 px-3 py-1 text-xs font-en text-gray-400">Strategy</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Case 2 -->
-                <div class="group grid grid-cols-1 md:grid-cols-12 gap-8 items-center reveal-text">
-                    <div class="md:col-span-7 md:order-2 overflow-hidden">
-                        <img src="images/works-rd.jpg"
-                            alt="研究開発段階における新規素材のLCA評価プロジェクト" loading="lazy"
-                            class="w-full h-[400px] object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
-                    </div>
-                    <div class="md:col-span-5 md:order-1">
-                        <span
-                            class="text-brand-green font-en font-bold text-xs tracking-widest uppercase mb-4 block">Manufacturing
-                            (R&D)</span>
-                        <h3 class="text-3xl font-bold mb-6">上流LCA / 新規事業検討</h3>
-                        <p class="text-gray-400 leading-relaxed mb-8">
-                            研究開発段階における新規素材の未来LCA評価を実施。事業性とともに量産時の環境負荷を予測し、環境優位性を持つ製品開発の意思決定を支援。新規事業参入の判断材料として活用されました。
-                        </p>
-                        <div class="flex gap-4">
-                            <span class="border border-white/20 px-3 py-1 text-xs font-en text-gray-400">R&D
-                                Support</span>
-                            <span class="border border-white/20 px-3 py-1 text-xs font-en text-gray-400">Feasibility
-                                Study</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Case 3 -->
-                <div class="group grid grid-cols-1 md:grid-cols-12 gap-8 items-center reveal-text">
-                    <div class="md:col-span-7 overflow-hidden">
-                        <img src="images/works-service.jpg"
-                            alt="カーボンニュートラル新規事業企画プロジェクト" loading="lazy"
-                            class="w-full h-[400px] object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
-                    </div>
-                    <div class="md:col-span-5">
-                        <span
-                            class="text-brand-green font-en font-bold text-xs tracking-widest uppercase mb-4 block">Service
-                            Industry</span>
-                        <h3 class="text-3xl font-bold mb-6">カーボンニュートラル/資源循環に関する新規事業企画・立ち上げ</h3>
-                        <p class="text-gray-400 leading-relaxed mb-8">
-                            カーボンニュートラル/資源循環をテーマとした新規事業の企画から立ち上げまでを伴走。市場調査、ビジネスモデル構築、パートナー選定・交渉、リリースまで一気通貫で支援しました。
-                        </p>
-                        <div class="flex gap-4">
-                            <span class="border border-white/20 px-3 py-1 text-xs font-en text-gray-400">New
-                                Business</span>
-                            <span class="border border-white/20 px-3 py-1 text-xs font-en text-gray-400">PMO</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Column Preview Section -->
-    <section id="column" class="py-32 px-4 md:px-12 bg-brand-gray text-brand-black">
-        <div class="max-w-screen-2xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16 border-b-2 border-brand-black pb-4">
-                <h2 class="font-en text-4xl md:text-6xl font-bold tracking-tighter">COLUMN</h2>
-                <a href="/columns/"
-                    class="group flex items-center gap-2 font-en text-sm tracking-widest hover:text-brand-green transition-colors mt-8 md:mt-0">
-                    VIEW ALL ARTICLES <i data-lucide="arrow-right"
-                        class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
-                </a>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Article Card 1 (Latest) -->
-                <a href="/columns/nature-footprint-basics.html" class="group bg-white hover:shadow-lg transition-shadow duration-300 flex flex-col">
-                    <div class="overflow-hidden">
-                        <img src="images/column-nature-footprint-basics.png"
-                            alt="ネイチャーフットプリントの概念イメージ" loading="lazy"
-                            class="w-full aspect-[2/1] object-contain bg-gray-100 group-hover:scale-105 transition-transform duration-700">
-                    </div>
-                    <div class="p-6 flex-1">
-                        <div class="flex items-center gap-3 mb-4">
-                            <span class="bg-brand-green/10 text-brand-green text-xs font-en font-bold px-2 py-0.5 tracking-wider uppercase">Nature</span>
-                            <time class="text-xs text-gray-400 font-en">2026.04.08</time>
-                        </div>
-                        <h3 class="font-bold text-lg mb-2 group-hover:text-brand-green transition-colors leading-snug">ネイチャーフットプリントとは？カーボンの「次」に来る企業の環境評価</h3>
-                        <p class="text-sm text-gray-500 leading-relaxed">生物多様性・生態系サービスの定量評価手法、TNFD・ISSB動向、中堅中小企業が備えるべきポイントを解説。</p>
-                    </div>
-                </a>
-
-                <!-- Article Card 2 -->
-                <a href="/columns/cfp-product-rules-guide.html" class="group bg-white hover:shadow-lg transition-shadow duration-300 flex flex-col">
-                    <div class="overflow-hidden">
-                        <img src="images/column-cfp-product-rules.png"
-                            alt="CFP製品別算定ルール一覧イメージ" loading="lazy"
-                            class="w-full aspect-[2/1] object-contain bg-gray-100 group-hover:scale-105 transition-transform duration-700">
-                    </div>
-                    <div class="p-6 flex-1">
-                        <div class="flex items-center gap-3 mb-4">
-                            <span class="bg-brand-green/10 text-brand-green text-xs font-en font-bold px-2 py-0.5 tracking-wider uppercase">CFP</span>
-                            <time class="text-xs text-gray-400 font-en">2026.04.05</time>
-                        </div>
-                        <h3 class="font-bold text-lg mb-2 group-hover:text-brand-green transition-colors leading-snug">CFP製品別算定ルール一覧｜自社製品に適用されるルールの探し方</h3>
-                        <p class="text-sm text-gray-500 leading-relaxed">経産省・環境省の支援事業で整備が進む全10業界のCFP算定ルールを一覧表で比較し、該当ルールの探し方を解説。</p>
-                    </div>
-                </a>
-
-                <!-- Article Card 3 -->
-                <a href="/columns/lca-basics-for-beginners.html" class="group bg-white hover:shadow-lg transition-shadow duration-300 flex flex-col">
-                    <div class="overflow-hidden">
-                        <img src="images/column-lca-basics.png"
-                            alt="LCA算定の基礎イメージ" loading="lazy"
-                            class="w-full aspect-[2/1] object-contain bg-gray-100 group-hover:scale-105 transition-transform duration-700">
-                    </div>
-                    <div class="p-6 flex-1">
-                        <div class="flex items-center gap-3 mb-4">
-                            <span class="bg-brand-green/10 text-brand-green text-xs font-en font-bold px-2 py-0.5 tracking-wider uppercase">LCA</span>
-                            <time class="text-xs text-gray-400 font-en">2026.04.04</time>
-                        </div>
-                        <h3 class="font-bold text-lg mb-2 group-hover:text-brand-green transition-colors leading-snug">LCA算定とは？初めての企業担当者が知るべき基礎と進め方</h3>
-                        <p class="text-sm text-gray-500 leading-relaxed">ISO 14040の4つのフェーズ、データ収集のコツ、よくある失敗を実務視点で解説。</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Company Section -->
-    <section id="about-us" class="py-32 px-4 md:px-12 bg-brand-white text-brand-black">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="font-en text-4xl font-bold tracking-tighter mb-4">ABOUT US</h2>
-                <div class="w-16 h-1 bg-brand-green mx-auto"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div class="bg-brand-gray p-10">
-                    <dl class="space-y-8">
-                        <div class="border-b border-gray-300 pb-4">
-                            <dt class="font-en text-xs text-gray-500 uppercase tracking-widest mb-1">Name
-                            </dt>
-                            <dd class="font-en font-bold text-2xl">sustainable&</dd>
-                        </div>
-                        <div class="border-b border-gray-300 pb-4">
-                            <dt class="font-en text-xs text-gray-500 uppercase tracking-widest mb-1">
-                                Representative</dt>
-                            <dd class="font-bold text-2xl">藤森 健 <span
-                                    class="text-sm font-en font-normal text-gray-500 ml-2">LCAエキスパート・中小企業診断士</span>
-                            </dd>
-                        </div>
-                        <div class="border-b border-gray-300 pb-4">
-                            <dt class="font-en text-xs text-gray-500 uppercase tracking-widest mb-1">
-                                Established</dt>
-                            <dd class="font-en font-bold text-2xl">2024</dd>
-                        </div>
-                    </dl>
-                </div>
-                <div class="relative h-full min-h-[300px]">
-                    <img src="images/about-office.jpg"
-                        alt="東京のオフィスビル" loading="lazy" class="absolute inset-0 w-full h-full object-cover grayscale">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq" class="py-32 px-4 md:px-12 bg-brand-black text-white">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="font-en text-4xl md:text-6xl font-bold tracking-tighter mb-4">FAQ</h2>
-                <p class="text-gray-400">よくいただくご質問</p>
-            </div>
-
-            <div class="space-y-4">
-                <details class="faq-item border border-gray-700 hover:border-gray-500 transition-colors">
-                    <summary class="flex justify-between items-center p-6 cursor-pointer">
-                        <span class="font-bold text-lg pr-4">どのようなサービスを提供していますか？</span>
-                        <i data-lucide="plus" class="faq-icon w-5 h-5 flex-shrink-0 text-brand-green"></i>
-                    </summary>
-                    <div class="px-6 pb-6 text-gray-400 leading-relaxed">
-                        <p>主に3つのサービスをご提供しています。サステナビリティ経営アドバイザー・顧問（月額型）では、戦略策定から実行、算定の活用、社内体制構築まで包括的に伴走します。LCA/CFP/ネイチャーフットプリントの算定・レビュー・アドバイザリーでは、プロジェクト単位でご支援します。サステナビリティ業務へのAI導入・活用支援も行っています。</p>
-                    </div>
-                </details>
-
-                <details class="faq-item border border-gray-700 hover:border-gray-500 transition-colors">
-                    <summary class="flex justify-between items-center p-6 cursor-pointer">
-                        <span class="font-bold text-lg pr-4">LCA・CFP算定にはどのくらいの期間がかかりますか？</span>
-                        <i data-lucide="plus" class="faq-icon w-5 h-5 flex-shrink-0 text-brand-green"></i>
-                    </summary>
-                    <div class="px-6 pb-6 text-gray-400 leading-relaxed">
-                        <p>概算評価（スクリーニング）であれば1〜2ヶ月、第三者認証レベルの詳細算定であれば3〜6ヶ月が目安です。対象製品の複雑さやデータの入手状況によって変動しますので、まずはヒアリングの上でスケジュールをご提案します。</p>
-                    </div>
-                </details>
-
-                <details class="faq-item border border-gray-700 hover:border-gray-500 transition-colors">
-                    <summary class="flex justify-between items-center p-6 cursor-pointer">
-                        <span class="font-bold text-lg pr-4">中小企業でも対応可能ですか？</span>
-                        <i data-lucide="plus" class="faq-icon w-5 h-5 flex-shrink-0 text-brand-green"></i>
-                    </summary>
-                    <div class="px-6 pb-6 text-gray-400 leading-relaxed">
-                        <p>はい、中堅・中小企業のご支援を積極的に行っています。代表の藤森は中小企業診断士の資格を保有しており、限られたリソースの中で最大の効果を出すための実践的なアプローチをご提案します。まずはスクリーニングLCAから始めて段階的に精度を高めていく方法もあります。</p>
-                    </div>
-                </details>
-
-                <details class="faq-item border border-gray-700 hover:border-gray-500 transition-colors">
-                    <summary class="flex justify-between items-center p-6 cursor-pointer">
-                        <span class="font-bold text-lg pr-4">費用の目安を教えてください。</span>
-                        <i data-lucide="plus" class="faq-icon w-5 h-5 flex-shrink-0 text-brand-green"></i>
-                    </summary>
-                    <div class="px-6 pb-6 text-gray-400 leading-relaxed">
-                        <p>LCA/CFPの自立化教育（社内人材育成）やクリティカルレビューは10万円〜でご提供しています。算定の伴走支援やアドバイザリー、サステナビリティ経営顧問については、内容・期間に応じたお見積りとなります。まずはお気軽にご相談ください。</p>
-                    </div>
-                </details>
-
-                <details class="faq-item border border-gray-700 hover:border-gray-500 transition-colors">
-                    <summary class="flex justify-between items-center p-6 cursor-pointer">
-                        <span class="font-bold text-lg pr-4">どのような業界に対応していますか？</span>
-                        <i data-lucide="plus" class="faq-icon w-5 h-5 flex-shrink-0 text-brand-green"></i>
-                    </summary>
-                    <div class="px-6 pb-6 text-gray-400 leading-relaxed">
-                        <p>化学、製造業、食品、サービス業など幅広い業界に対応しています。LCA算定では業界固有の算定ルール（製品別カテゴリルールなど）への対応も重要です。これまでの実績を活かし、業界特性を踏まえた最適な方法論をご提案します。</p>
-                    </div>
-                </details>
-
-                <details class="faq-item border border-gray-700 hover:border-gray-500 transition-colors">
-                    <summary class="flex justify-between items-center p-6 cursor-pointer">
-                        <span class="font-bold text-lg pr-4">リモートでの対応は可能ですか？</span>
-                        <i data-lucide="plus" class="faq-icon w-5 h-5 flex-shrink-0 text-brand-green"></i>
-                    </summary>
-                    <div class="px-6 pb-6 text-gray-400 leading-relaxed">
-                        <p>はい、オンラインでの打ち合わせ・プロジェクト進行に対応しています。全国どこからでもご依頼いただけます。必要に応じて対面でのキックオフミーティングや現地調査も実施します。</p>
-                    </div>
-                </details>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-32 px-4 md:px-12 bg-brand-green relative text-white overflow-hidden">
-        <!-- Background Pattern -->
-        <div class="absolute inset-0 opacity-10">
-            <img src="images/contact-bg.jpg"
-                alt="" aria-hidden="true" loading="lazy" class="w-full h-full object-cover">
-        </div>
-
-        <div class="max-w-5xl mx-auto relative z-10">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
-                <div>
-                    <p class="font-en text-sm tracking-widest uppercase mb-4 font-bold text-brand-gray">
-                        Contact Us</p>
-                    <h2 class="font-en text-6xl md:text-7xl font-bold tracking-tighter mb-8 leading-none">
-                        LET'S<br>TALK.
-                    </h2>
-                    <p class="text-gray-300 leading-relaxed mb-12">
-                        サステナビリティ経営に関するご相談、<br>
-                        LCA算定のご依頼など、お気軽にお問い合わせください。<br>
-                        共に未来を創るパートナーとして、<br>
-                        最適なソリューションをご提案します。
-                    </p>
-
-                    <div class="space-y-4 font-en text-sm tracking-widest">
-                        <div class="flex items-center gap-4">
-                            <i data-lucide="mail" class="w-5 h-5"></i>
-                            <span>takeshi.fujimori@sustainableand.com</span>
-                        </div>
-                        <div class="flex items-center gap-4">
-                            <i data-lucide="map-pin" class="w-5 h-5"></i>
-                            <span>Tokyo, Japan</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white text-brand-black p-8 md:p-10 shadow-2xl">
-                    <!-- Formspree Contact Form -->
-                    <!-- IMPORTANT: Replace 'YOUR_FORM_ID' with your actual Formspree Form ID -->
-                    <form action="https://formspree.io/f/mldzajpw" method="POST" class="space-y-6">
-                        <div>
-                            <label
-                                class="block text-xs font-en uppercase tracking-wider mb-2 text-gray-500">Name</label>
-                            <input type="text" name="name" required
-                                class="w-full bg-brand-gray border-0 border-b border-gray-300 p-4 focus:border-brand-green focus:ring-0 transition-colors outline-none"
-                                placeholder="Name">
-                        </div>
-                        <div>
-                            <label
-                                class="block text-xs font-en uppercase tracking-wider mb-2 text-gray-500">Email</label>
-                            <input type="email" name="email" required
-                                class="w-full bg-brand-gray border-0 border-b border-gray-300 p-4 focus:border-brand-green focus:ring-0 transition-colors outline-none"
-                                placeholder="Email">
-                        </div>
-                        <div>
-                            <label
-                                class="block text-xs font-en uppercase tracking-wider mb-2 text-gray-500">Message</label>
-                            <textarea rows="3" name="message" required
-                                class="w-full bg-brand-gray border-0 border-b border-gray-300 p-4 focus:border-brand-green focus:ring-0 transition-colors outline-none"
-                                placeholder="How can we help?"></textarea>
-                        </div>
-                        <button type="submit"
-                            class="w-full bg-brand-black text-white font-en font-bold py-4 px-8 hover:bg-brand-green transition-colors duration-300 flex justify-between items-center group">
-                            <span>SEND MESSAGE</span>
-                            <i data-lucide="arrow-right"
-                                class="w-5 h-5 group-hover:translate-x-2 transition-transform"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-brand-black text-white py-12 px-4 border-t border-white/10">
-        <div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="font-en font-bold text-2xl tracking-tighter">sustainable&</div>
-            <div class="text-xs text-gray-500 font-en">
-                &copy; 2026 sustainable&. All Rights Reserved.
-            </div>
-            <a href="/privacy-policy.html" class="text-xs text-gray-500 hover:text-white transition-colors">プライバシーポリシー</a>
+        <div class="foot__bot">
+            <span>&copy; 2026 sustainable&amp;. All Rights Reserved.</span>
+            <a href="/privacy-policy.html">プライバシーポリシー</a>
         </div>
     </footer>
 
-    <!-- Icons Init & Scroll Animation Script -->
     <!-- Custom Scripts -->
     <script src="js/script.js"></script>
 
