@@ -12,3 +12,12 @@ take-sustainableand.github.io/
 
 # Temporary image files (originals before rename)
 A_clean,*
+
+# Working files that must stay out of the published site
+# (GitHub Pages serves every tracked file as-is)
+/lp/
+/research/
+/tools/
+/columns/drafts/
+/code.md
+/PENDING_FIXES_*.md
